@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Javier Enrique Aguilar | Investigador en Estadística Bayesiana</title>
-    <meta name="description" content="Sitio personal de Javier Enrique Aguilar, investigador postdoctoral en estadística bayesiana.">
+    <title>Luismar Alvarez Carrillo | Estudiante de Matemáticas</title>
+    <meta name="description" content="Sitio personal de Luismar Alvarez, estudiante de Matemáticas en la UNAL, interesado en física matemática.">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 (iconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- VARIABLES CSS (modo claro/oscuro) ---------- */
+        /* ---------- VARIABLES CSS (modo claro/oscuro) - Nueva paleta: azul, lila, agua marina ---------- */
         :root {
-            --bg-body: #fef9f0;
+            --bg-body: #f0f4ff;          /* azul muy pálido (agua marina clarísimo) */
             --bg-surface: #ffffff;
-            --text-primary: #2c2b28;
-            --text-secondary: #5c5b58;
-            --accent: #b05b3b;
-            --accent-hover: #8c432a;
-            --border: #e2dcd2;
-            --shadow: rgba(0,0,0,0.03);
+            --text-primary: #1e293b;      /* azul pizarra oscuro */
+            --text-secondary: #475569;
+            --accent: #3b82f6;            /* azul medio (primary) */
+            --accent-hover: #2563eb;      /* azul más intenso */
+            --accent-secondary: #8b5cf6;  /* lila/violeta para detalles */
+            --border: #cbd5e1;            /* gris azulado */
+            --shadow: rgba(59, 130, 246, 0.08);
             --navbar-bg: rgba(255, 255, 255, 0.85);
-            --code-bg: #f0ebe4;
+            --code-bg: #e0e7ff;           /* lila muy claro */
         }
         [data-theme="dark"] {
-            --bg-body: #1a1a24;
-            --bg-surface: #252530;
-            --text-primary: #e4e4e7;
-            --text-secondary: #a1a1aa;
-            --accent: #e07a5f;
-            --accent-hover: #f4a261;
-            --border: #3a3a44;
-            --shadow: rgba(0,0,0,0.2);
-            --navbar-bg: rgba(30, 30, 40, 0.9);
-            --code-bg: #2d2d35;
+            --bg-body: #0f172a;           /* azul oscuro profundo */
+            --bg-surface: #1e293b;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent: #60a5fa;            /* azul claro */
+            --accent-hover: #93c5fd;
+            --accent-secondary: #a78bfa;  /* lila claro */
+            --border: #334155;
+            --shadow: rgba(0,0,0,0.3);
+            --navbar-bg: rgba(30, 41, 59, 0.9);
+            --code-bg: #2d3a5e;
         }
 
         * {
@@ -51,7 +53,6 @@
             scroll-behavior: smooth;
         }
 
-        /* contenedor principal */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -123,7 +124,7 @@
             font-family: 'Merriweather', serif;
             font-size: 2.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), #e2a37b);
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -204,6 +205,7 @@
         .card h3 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            color: var(--accent);
         }
         footer {
             text-align: center;
@@ -214,7 +216,6 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 700px) {
             .navbar {
                 flex-direction: column;
@@ -237,12 +238,12 @@
 <body>
 
 <nav class="navbar">
-    <div style="font-weight: bold; font-family: 'Merriweather', serif;">J.E. Aguilar</div>
+    <div style="font-weight: bold; font-family: 'Merriweather', serif;">Luismar Alvarez</div>
     <ul class="nav-links">
         <li><a href="#" class="active">Inicio</a></li>
-        <li><a href="#">Publicaciones</a></li>
+        <li><a href="#">Investigación</a></li>
         <li><a href="#">Eventos</a></li>
-        <li><a href="#">Docencia</a></li>
+        <li><a href="#">Tutorías</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro/claro">
         <i class="fas fa-moon"></i> <span>Modo oscuro</span>
@@ -252,90 +253,148 @@
 <div class="container">
     <!-- Perfil -->
     <div class="hero">
-        <!-- Reemplaza 'graphics/perfil.jpg' con la ruta de tu foto -->
-        <img src="graphics/perfil.jpg" alt="Javier Enrique Aguilar" class="avatar" onerror="this.src='https://via.placeholder.com/160?text=Foto'">
-        <h1>Javier Enrique Aguilar</h1>
-        <div class="subtitle">Postdoctoral Researcher in Bayesian Statistics</div>
+        <!-- Coloca tu foto en graphics/perfil.jpg o cambia la ruta -->
+        <img src="graphics/perfil.jpg" alt="Luismar Alvarez" class="avatar" onerror="this.src='https://via.placeholder.com/160?text=Luismar'">
+        <h1>Luismar Alvarez Carrillo</h1>
+        <div class="subtitle">Estudiante de Matemáticas Puras | UNAL</div>
         <div class="social-links">
-            <a href="mailto:javier.aguilarr@icloud.com"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://github.com/jear2412" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://scholar.google.com/citations?user=ysOrxQUAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="mailto:luismath.pi3@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/luismarcarrillo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
         </div>
     </div>
 
     <!-- Biografía / About -->
     <section>
         <h2>Sobre mí</h2>
-        <p>Soy investigador postdoctoral en el <strong>Research Center Trustworthy Data Science and Security</strong>, trabajando en el grupo de Causalidad con <a href="#" style="color: var(--accent);">Alexander Marx</a>. Completé mi doctorado en Estadística bajo la supervisión de Paul Bürkner en la TU Dortmund University. Anteriormente fui asistente de investigación en el Clúster de Excelencia SimTech en la Universidad de Stuttgart. Poseo una maestría en Probabilidad y Estadística del Centro de Investigación en Matemáticas (CIMAT) en Guanajuato, México, bajo la supervisión de Andrés Christen.</p>
-        <p>Mi investigación se centra en computación bayesiana, especificación de priors, programación probabilística y estadística de alta dimensión. Desarrollo priors interpretables que definen distribuciones conjuntas en cantidades predictivas, ofreciendo nuevas formas de controlar la complejidad del modelo, mejorar la cuantificación de incertidumbre y validar modelos mediante técnicas basadas en simulación. Mi trabajo ha sido publicado en <em>Bayesian Analysis</em>, <em>Statistics and Computing</em> y el <em>Electronic Journal of Statistics</em>.</p>
-        <p>Imparto y organizo talleres sobre análisis de datos bayesianos, con herramientas como <code>brms</code>, <code>blavaan</code> y <code>Stan</code>. También colaboro con investigadores aplicados en ciencias naturales adaptando métodos bayesianos a estudios reales. No dudes en <a href="mailto:javier.aguilarr@icloud.com" style="color: var(--accent);">contactarme</a> para discutir ideas o proyectos.</p>
+        <p>Soy estudiante de Matemáticas en la <strong>Universidad Nacional de Colombia (UNAL)</strong>, profundamente interesado en la investigación y el desarrollo de la <strong>física matemática</strong>. Mi curiosidad se enfoca en comprender los fundamentos matemáticos que subyacen a las teorías físicas, explorando la intersección entre el análisis geométrico, la teoría de grupos y la mecánica cuántica.</p>
+        
+        <p>Actualmente me encuentro en formación constante, participando en seminarios de física teórica y grupos de estudio sobre relatividad general y teoría de campos. Mi objetivo es contribuir al avance del conocimiento en áreas como sistemas dinámicos, geometría diferencial aplicada a la física y métodos variacionales.</p>
+
+        <h3>Perfil académico</h3>
+        <ul>
+            <li>📐 <strong>Énfasis:</strong> Matemáticas puras y aplicadas, con electivas en física teórica.</li>
+            <li>📚 <strong>Cursos destacados:</strong> Geometría diferencial, Álgebra lineal avanzada, Mecánica analítica, Ecuaciones diferenciales parciales.</li>
+            <li>🔬 <strong>Intereses de investigación:</strong> Simetrías en sistemas físicos, teoría de representaciones, cuantización geométrica.</li>
+            <li>💻 <strong>Herramientas:</strong> Python (con librerías científicas), Mathematica, LaTeX para escritura académica.</li>
+        </ul>
+
+        <h3>Bibliografía de referencia</h3>
+        <p>Algunos textos y autores que han marcado mi formación en física matemática:</p>
+        <ul>
+            <li><em>“Mathematical Methods of Classical Mechanics”</em> – V.I. Arnold.</li>
+            <li><em>“Geometry, Topology and Physics”</em> – M. Nakahara.</li>
+            <li><em>“Quantum Mechanics and Quantum Field Theory”</em> – J. Dimock.</li>
+            <li><em>“Differential Geometry and Lie Groups for Physicists”</em> – M. Fecko.</li>
+        </ul>
+        
+        <p>Estoy abierto a colaboraciones, discusiones académicas o sugerencias sobre rutas de estudio en física matemática. Puedes escribirme a <a href="mailto:luismath.pi3@gmail.com" style="color: var(--accent);">mi correo</a> para conectar.</p>
     </section>
 
-    <!-- Publicaciones destacadas -->
+    <!-- Grupo de investigación PCM -->
     <section>
-        <h2>Publicaciones destacadas</h2>
+        <h2>Grupo de investigación: PCM Computational Applications</h2>
+        <p>Soy miembro activo del grupo <strong>PCM Computational Applications</strong>, adscrito a la <strong>Universidad Nacional de Colombia (UNAL)</strong>. El grupo está liderado por la profesora <strong>Elisabeth Restrepo Parra</strong> y cuenta con clasificación <strong>B</strong> en MinCiencias (vigente hasta la siguiente convocatoria). Nuestro trabajo se enfoca en el uso de métodos computacionales para resolver problemas en física, química y matemáticas.</p>
+
         <div class="grid-2">
             <div class="card">
-                <h3>Bayesian Analysis (2024)</h3>
-                <p>"Prior distributions for structured additive predictors" – Un nuevo enfoque para priors en modelos aditivos estructurados.</p>
-                <a href="#" class="btn">Leer más →</a>
+                <h3>📊 Datos básicos</h3>
+                <ul style="margin-left: 1rem; list-style: disc;">
+                    <li><strong>Año de formación:</strong> 2006</li>
+                    <li><strong>Departamento - Ciudad:</strong> Caldas - Manizales</li>
+                    <li><strong>Líder:</strong> Elisabeth Restrepo Parra</li>
+                    <li><strong>Clasificación:</strong> B</li>
+                    <li><strong>Área de conocimiento:</strong> Ciencias Naturales -- Computación y Ciencias de la Información</li>
+                    <li><strong>Programa nacional:</strong> Ciencia, Tecnología e Innovación en TIC</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Statistics and Computing (2023)</h3>
-                <p>"Efficient posterior sampling for high-dimensional sparse regression" – Métodos computacionales avanzados.</p>
-                <a href="#" class="btn">Leer más →</a>
-            </div>
-            <div class="card">
-                <h3>Electronic Journal of Statistics (2022)</h3>
-                <p>"Simulation-based calibration for Bayesian workflows" – Validación de modelos mediante simulaciones.</p>
-                <a href="#" class="btn">Leer más →</a>
+                <h3>🔬 Líneas de investigación</h3>
+                <ul style="margin-left: 1rem; list-style: disc;">
+                    <li>Machine y Deep Learning</li>
+                    <li>Modelamiento y Simulación de procesos biofísicos</li>
+                    <li>Modelamiento y simulación de plasmas</li>
+                    <li>Modelamiento y simulación de propiedades magnéticas de nanoestructuras</li>
+                    <li>Optimización de procesos</li>
+                    <li>Procesamiento digital de imágenes y de señales</li>
+                </ul>
             </div>
         </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>🎯 Objetivo general</h3>
+                <p>Por medio de modelamiento, técnicas de simulación y herramientas matemáticas, realizar investigaciones para buscar soluciones a problemas en física, química y matemáticas, empleando las ciencias de la computación.</p>
+            </div>
+            <div class="card">
+                <h3>🌐 Enlaces de interés</h3>
+                <p><i class="fas fa-globe"></i> <a href="https://pcm-ca.github.io" target="_blank" style="color: var(--accent);">Sitio web oficial</a><br>
+                <i class="fas fa-envelope"></i> <a href="mailto:erestrepopa@unal.edu.co" style="color: var(--accent);">erestrepopa@unal.edu.co</a></p>
+                <p><strong>Instituciones:</strong> Universidad Nacional de Colombia (avalado).</p>
+            </div>
+        </div>
+
         <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="#" class="btn" style="background: var(--code-bg); color: var(--text-primary);">Ver todas las publicaciones →</a>
+            <a href="https://pcm-ca.github.io" target="_blank" class="btn">Conocer más sobre el grupo →</a>
         </div>
     </section>
 
-    <!-- Próximos eventos / workshops -->
+    <!-- Eventos y talleres (ajustados a perfil de matemáticas/física) -->
     <section>
         <h2>Eventos y talleres</h2>
         <ul style="margin-left: 1.5rem;">
-            <li><strong>Jun 2025</strong> - Workshop "Bayesian Modeling with brms", Universidad de Berna (invitado).</li>
-            <li><strong>Abr 2025</strong> - Conferencia ISBA, Londres: presentación sobre priors en modelos jerárquicos.</li>
-            <li><strong>Feb 2025</strong> - Curso corto "Stan para ciencias sociales", FU Berlín.</li>
+            <li><strong>Oct 2025</strong> - Seminario de Física Matemática: "Geometría y grupos de Lie en mecánica cuántica" (UNAL, ponente invitado).</li>
+            <li><strong>Sep 2025</strong> - Escuela de Verano en Sistemas Dinámicos y Caos (Universidad de los Andes).</li>
+            <li><strong>Ago 2025</strong> - Taller de introducción a LaTeX y Git para estudiantes de ciencias (organizado por PCM).</li>
         </ul>
-        <a href="#" class="btn">Más eventos →</a>
+        <a href="#" class="btn">Próximos eventos →</a>
     </section>
 
-    <!-- Docencia -->
+    <!-- Monitorias y tutorías personalizadas -->
     <section>
-        <h2>Docencia</h2>
+        <h2>📚 Monitorias y tutorías personalizadas</h2>
+        <p>Ofrezco acompañamiento académico y refuerzo en distintas áreas de matemáticas, física y herramientas computacionales. Las sesiones se adaptan a tus necesidades: desde preparación para exámenes, solución de talleres, hasta apoyo en investigación formativa.</p>
+
         <div class="grid-2">
             <div class="card">
-                <h3>Introducción a la Estadística Bayesiana</h3>
-                <p>Curso de nivel máster en TU Dortmund. Temas: fundamentos, MCMC, modelos jerárquicos.</p>
+                <h3>📐 Matemáticas y Física</h3>
+                <ul style="margin-left: 1rem; list-style: disc;">
+                    <li>Cálculo diferencial e integral</li>
+                    <li>Álgebra lineal y geometría vectorial</li>
+                    <li>Ecuaciones diferenciales (ordinarias y parciales)</li>
+                    <li>Mecánica clásica y electromagnetismo básico</li>
+                    <li>Métodos matemáticos para la física</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Programación Probabilística con Stan</h3>
-                <p>Taller práctico de 2 días impartido en CIMAT y Uni Stuttgart.</p>
+                <h3>💻 Herramientas computacionales y redacción</h3>
+                <ul style="margin-left: 1rem; list-style: disc;">
+                    <li>Python con librerías científicas (NumPy, Matplotlib, SymPy)</li>
+                    <li>Matemática simbólica y numérica (Wolfram Mathematica)</li>
+                    <li>LaTeX para trabajos, informes y presentaciones académicas</li>
+                    <li>Introducción a Git y GitHub para control de versiones</li>
+                    <li>Simulaciones básicas con métodos numéricos</li>
+                </ul>
             </div>
         </div>
-        <a href="#" class="btn">Materiales y recursos →</a>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="mailto:luismath.pi3@gmail.com" class="btn">Solicitar información o agendar tutoría →</a>
+        </div>
     </section>
 </div>
 
 <footer>
-    <p>© 2022–2026 Javier Enrique Aguilar. Thank you for visiting.</p>
+    <p>© 2025 Luismar Alvarez Carrillo. Gracias por visitar.</p>
     <p style="margin-top: 0.5rem;">
-        <a href="mailto:javier.aguilarr@icloud.com" style="color: var(--accent);"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:luismath.pi3@gmail.com" style="color: var(--accent);"><i class="fas fa-envelope"></i></a>
         &nbsp;|&nbsp;
-        <a href="https://github.com/jear2412" target="_blank" style="color: var(--accent);"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/luismarcarrillo" target="_blank" style="color: var(--accent);"><i class="fab fa-github"></i></a>
     </p>
 </footer>
 
 <script>
-    // Lógica del modo oscuro/claro
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     const icon = themeToggle.querySelector('i');
@@ -353,7 +412,6 @@
         }
     }
 
-    // Cargar tema guardado o preferencia del sistema
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         setTheme(savedTheme);
