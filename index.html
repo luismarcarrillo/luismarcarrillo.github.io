@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luismar Alvarez | Matemáticas UNAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f9ff;
+            color: #1e293b;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .navbar {
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #dbeafe;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: #1e293b; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        .hero { text-align: center; margin: 3rem 0 2rem; }
+        .avatar {
+            width: 160px; height: 160px; border-radius: 50%;
+            object-fit: cover; border: 4px solid white;
+            box-shadow: 0 12px 24px rgba(59,130,246,0.1);
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            background-clip: text; -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero .subtitle { font-size: 1.3rem; color: #475569; margin-top: 0.5rem; }
+        .social-links { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+        .social-links a {
+            background: #e0e7ff; padding: 0.6rem 1.2rem; border-radius: 40px;
+            text-decoration: none; color: #1e293b; display: inline-flex; align-items: center; gap: 0.5rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover { background: #3b82f6; color: white; transform: translateY(-3px); }
+        section {
+            background: white; border-radius: 1.5rem; padding: 2rem;
+            margin: 2rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #dbeafe;
+        }
+        section h2 { font-family: 'Merriweather', serif; font-size: 1.8rem; margin-bottom: 1rem; border-left: 5px solid #3b82f6; padding-left: 1rem; }
+        .btn {
+            display: inline-block; background: #3b82f6; color: white; padding: 0.6rem 1.2rem;
+            border-radius: 2rem; text-decoration: none; font-weight: 500; transition: 0.2s;
+        }
+        .btn:hover { background: #2563eb; transform: translateY(-2px); }
+        footer { text-align: center; padding: 2rem 0 1rem; border-top: 1px solid #dbeafe; margin-top: 2rem; color: #475569; }
+        @media (max-width: 700px) {
+            .navbar { flex-direction: column; align-items: stretch; }
+            .nav-links { justify-content: center; gap: 1rem; flex-wrap: wrap; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div style="font-weight: bold; font-family: 'Merriweather', serif;">Luismar Alvarez</div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="bibliografia.html">Bibliografía</a></li>
+        <li><a href="investigacion.html">Investigación</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="tutorias.html">Tutorías</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="hero">
+        <img src="graphics/perfil.jpg" alt="Luismar Alvarez" class="avatar" onerror="this.src='https://via.placeholder.com/160?text=LA'">
+        <h1>Luismar Alvarez Carrillo</h1>
+        <div class="subtitle">Estudiante de Matemáticas Puras | UNAL</div>
+        <div class="social-links">
+            <a href="mailto:luismath.pi3@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/luismarcarrillo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+    <section>
+        <h2>Sobre mí</h2>
+        <p>Soy estudiante de Matemáticas en la <strong>Universidad Nacional de Colombia (UNAL)</strong>, interesado en la <strong>física matemática</strong>. Mi curiosidad se enfoca en los fundamentos matemáticos de las teorías físicas, explorando la geometría diferencial, la teoría de grupos y la mecánica cuántica.</p>
+        <p>Actualmente participo en seminarios de física teórica y grupos de estudio sobre relatividad general. Busco contribuir en sistemas dinámicos, geometría diferencial aplicada y métodos variacionales.</p>
+        <h3>Perfil académico</h3>
+        <ul>
+            <li>📐 <strong>Énfasis:</strong> Matemáticas puras y aplicadas, con electivas en física teórica.</li>
+            <li>📚 <strong>Cursos destacados:</strong> Geometría diferencial, Álgebra lineal avanzada, Mecánica analítica, EDP.</li>
+            <li>🔬 <strong>Intereses:</strong> Simetrías en sistemas físicos, teoría de representaciones, cuantización geométrica.</li>
+            <li>💻 <strong>Herramientas:</strong> Python, Mathematica, LaTeX.</li>
+        </ul>
+        <p>Para colaboraciones o discusiones, escríbeme a <a href="mailto:luismath.pi3@gmail.com" style="color:#3b82f6">mi correo</a>.</p>
+    </section>
+</div>
+<footer>
+    <p>© 2025 Luismar Alvarez Carrillo</p>
+    <p><a href="mailto:luismath.pi3@gmail.com" style="color:#3b82f6"><i class="fas fa-envelope"></i></a> | <a href="https://github.com/luismarcarrillo" target="_blank" style="color:#3b82f6"><i class="fab fa-github"></i></a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Luismar Alvarez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f5f9ff; color: #1e293b; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .navbar {
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #dbeafe;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: #1e293b; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        section {
+            background: white; border-radius: 1.5rem; padding: 2rem;
+            margin: 2rem 0; border: 1px solid #dbeafe;
+        }
+        section h2 { font-family: 'Merriweather', serif; font-size: 1.8rem; margin-bottom: 1rem; border-left: 5px solid #3b82f6; padding-left: 1rem; }
+        .btn { display: inline-block; background: #3b82f6; color: white; padding: 0.6rem 1.2rem; border-radius: 2rem; text-decoration: none; font-weight: 500; transition: 0.2s; }
+        .btn:hover { background: #2563eb; }
+        footer { text-align: center; padding: 2rem 0 1rem; border-top: 1px solid #dbeafe; margin-top: 2rem; color: #475569; }
+        @media (max-width: 700px) { .navbar { flex-direction: column; } .nav-links { justify-content: center; gap: 1rem; } }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div style="font-weight: bold; font-family: 'Merriweather', serif;">Luismar Alvarez</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="bibliografia.html">Bibliografía</a></li>
+        <li><a href="investigacion.html">Investigación</a></li>
+        <li><a href="eventos.html" class="active">Eventos</a></li>
+        <li><a href="tutorias.html">Tutorías</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <section>
+        <h2>Eventos y talleres</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li><strong>Oct 2025</strong> - Seminario: "Geometría y grupos de Lie" (UNAL)</li>
+            <li><strong>Sep 2025</strong> - Escuela de Verano en Sistemas Dinámicos (UniAndes)</li>
+            <li><strong>Ago 2025</strong> - Taller de LaTeX y Git para estudiantes de ciencias (PCM)</li>
+        </ul>
+        <a href="#" class="btn">Más información →</a>
+    </section>
+</div>
+<footer><p>© 2025 Luismar Alvarez Carrillo</p></footer>
+</body>
+</html>
