@@ -1,10 +1,372 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-theme="light">
 <head>
-    <title>Mi primera página</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Javier Enrique Aguilar | Investigador en Estadística Bayesiana</title>
+    <meta name="description" content="Sitio personal de Javier Enrique Aguilar, investigador postdoctoral en estadística bayesiana.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ---------- VARIABLES CSS (modo claro/oscuro) ---------- */
+        :root {
+            --bg-body: #fef9f0;
+            --bg-surface: #ffffff;
+            --text-primary: #2c2b28;
+            --text-secondary: #5c5b58;
+            --accent: #b05b3b;
+            --accent-hover: #8c432a;
+            --border: #e2dcd2;
+            --shadow: rgba(0,0,0,0.03);
+            --navbar-bg: rgba(255, 255, 255, 0.85);
+            --code-bg: #f0ebe4;
+        }
+        [data-theme="dark"] {
+            --bg-body: #1a1a24;
+            --bg-surface: #252530;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --accent: #e07a5f;
+            --accent-hover: #f4a261;
+            --border: #3a3a44;
+            --shadow: rgba(0,0,0,0.2);
+            --navbar-bg: rgba(30, 30, 40, 0.9);
+            --code-bg: #2d2d35;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background 0.2s, color 0.2s;
+            scroll-behavior: smooth;
+        }
+
+        /* contenedor principal */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* ---------- BARRA DE NAVEGACIÓN ---------- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            z-index: 100;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+        .theme-toggle {
+            background: var(--code-bg);
+            border: none;
+            border-radius: 2rem;
+            padding: 0.4rem 0.9rem;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+        .theme-toggle:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* ---------- PERFIL (HERO) ---------- */
+        .hero {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-surface);
+            box-shadow: 0 12px 24px var(--shadow);
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), #e2a37b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            background: var(--code-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .social-links a:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ---------- SECCIONES GENÉRICAS ---------- */
+        section {
+            background: var(--bg-surface);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px var(--shadow);
+            border: 1px solid var(--border);
+        }
+        section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .card {
+            background: var(--bg-body);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid var(--border);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Hola, mundo!</h1>
-    <p>Esta es mi página creada con GitHub Pages.</p>
+
+<nav class="navbar">
+    <div style="font-weight: bold; font-family: 'Merriweather', serif;">J.E. Aguilar</div>
+    <ul class="nav-links">
+        <li><a href="#" class="active">Inicio</a></li>
+        <li><a href="#">Publicaciones</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Docencia</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro/claro">
+        <i class="fas fa-moon"></i> <span>Modo oscuro</span>
+    </button>
+</nav>
+
+<div class="container">
+    <!-- Perfil -->
+    <div class="hero">
+        <!-- Reemplaza 'graphics/perfil.jpg' con la ruta de tu foto -->
+        <img src="graphics/perfil.jpg" alt="Javier Enrique Aguilar" class="avatar" onerror="this.src='https://via.placeholder.com/160?text=Foto'">
+        <h1>Javier Enrique Aguilar</h1>
+        <div class="subtitle">Postdoctoral Researcher in Bayesian Statistics</div>
+        <div class="social-links">
+            <a href="mailto:javier.aguilarr@icloud.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/jear2412" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://scholar.google.com/citations?user=ysOrxQUAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </div>
+
+    <!-- Biografía / About -->
+    <section>
+        <h2>Sobre mí</h2>
+        <p>Soy investigador postdoctoral en el <strong>Research Center Trustworthy Data Science and Security</strong>, trabajando en el grupo de Causalidad con <a href="#" style="color: var(--accent);">Alexander Marx</a>. Completé mi doctorado en Estadística bajo la supervisión de Paul Bürkner en la TU Dortmund University. Anteriormente fui asistente de investigación en el Clúster de Excelencia SimTech en la Universidad de Stuttgart. Poseo una maestría en Probabilidad y Estadística del Centro de Investigación en Matemáticas (CIMAT) en Guanajuato, México, bajo la supervisión de Andrés Christen.</p>
+        <p>Mi investigación se centra en computación bayesiana, especificación de priors, programación probabilística y estadística de alta dimensión. Desarrollo priors interpretables que definen distribuciones conjuntas en cantidades predictivas, ofreciendo nuevas formas de controlar la complejidad del modelo, mejorar la cuantificación de incertidumbre y validar modelos mediante técnicas basadas en simulación. Mi trabajo ha sido publicado en <em>Bayesian Analysis</em>, <em>Statistics and Computing</em> y el <em>Electronic Journal of Statistics</em>.</p>
+        <p>Imparto y organizo talleres sobre análisis de datos bayesianos, con herramientas como <code>brms</code>, <code>blavaan</code> y <code>Stan</code>. También colaboro con investigadores aplicados en ciencias naturales adaptando métodos bayesianos a estudios reales. No dudes en <a href="mailto:javier.aguilarr@icloud.com" style="color: var(--accent);">contactarme</a> para discutir ideas o proyectos.</p>
+    </section>
+
+    <!-- Publicaciones destacadas -->
+    <section>
+        <h2>Publicaciones destacadas</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Bayesian Analysis (2024)</h3>
+                <p>"Prior distributions for structured additive predictors" – Un nuevo enfoque para priors en modelos aditivos estructurados.</p>
+                <a href="#" class="btn">Leer más →</a>
+            </div>
+            <div class="card">
+                <h3>Statistics and Computing (2023)</h3>
+                <p>"Efficient posterior sampling for high-dimensional sparse regression" – Métodos computacionales avanzados.</p>
+                <a href="#" class="btn">Leer más →</a>
+            </div>
+            <div class="card">
+                <h3>Electronic Journal of Statistics (2022)</h3>
+                <p>"Simulation-based calibration for Bayesian workflows" – Validación de modelos mediante simulaciones.</p>
+                <a href="#" class="btn">Leer más →</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="#" class="btn" style="background: var(--code-bg); color: var(--text-primary);">Ver todas las publicaciones →</a>
+        </div>
+    </section>
+
+    <!-- Próximos eventos / workshops -->
+    <section>
+        <h2>Eventos y talleres</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li><strong>Jun 2025</strong> - Workshop "Bayesian Modeling with brms", Universidad de Berna (invitado).</li>
+            <li><strong>Abr 2025</strong> - Conferencia ISBA, Londres: presentación sobre priors en modelos jerárquicos.</li>
+            <li><strong>Feb 2025</strong> - Curso corto "Stan para ciencias sociales", FU Berlín.</li>
+        </ul>
+        <a href="#" class="btn">Más eventos →</a>
+    </section>
+
+    <!-- Docencia -->
+    <section>
+        <h2>Docencia</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Introducción a la Estadística Bayesiana</h3>
+                <p>Curso de nivel máster en TU Dortmund. Temas: fundamentos, MCMC, modelos jerárquicos.</p>
+            </div>
+            <div class="card">
+                <h3>Programación Probabilística con Stan</h3>
+                <p>Taller práctico de 2 días impartido en CIMAT y Uni Stuttgart.</p>
+            </div>
+        </div>
+        <a href="#" class="btn">Materiales y recursos →</a>
+    </section>
+</div>
+
+<footer>
+    <p>© 2022–2026 Javier Enrique Aguilar. Thank you for visiting.</p>
+    <p style="margin-top: 0.5rem;">
+        <a href="mailto:javier.aguilarr@icloud.com" style="color: var(--accent);"><i class="fas fa-envelope"></i></a>
+        &nbsp;|&nbsp;
+        <a href="https://github.com/jear2412" target="_blank" style="color: var(--accent);"><i class="fab fa-github"></i></a>
+    </p>
+</footer>
+
+<script>
+    // Lógica del modo oscuro/claro
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const icon = themeToggle.querySelector('i');
+    const span = themeToggle.querySelector('span');
+
+    function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            icon.className = 'fas fa-sun';
+            span.innerText = 'Modo claro';
+        } else {
+            icon.className = 'fas fa-moon';
+            span.innerText = 'Modo oscuro';
+        }
+    }
+
+    // Cargar tema guardado o preferencia del sistema
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const newTheme = current === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+</script>
 </body>
 </html>
