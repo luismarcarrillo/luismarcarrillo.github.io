@@ -1,3 +1,7 @@
-theme: jekyll-theme-minimal
-title: Mi sitio personal
-description: Un espacio para compartir mis proyectos
+project:
+  type: website
+
+website:
+  title: "Javier Enrique Aguilar"
+  description: "Postdoctoral Researcher in Bayesian Statistics | Bayesian computation, priors, probabilistic programming"
+  # ... el resto de la configuración
