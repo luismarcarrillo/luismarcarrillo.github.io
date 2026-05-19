@@ -1,7 +1,37 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Javier Enrique Aguilar"
-  description: "Postdoctoral Researcher in Bayesian Statistics | Bayesian computation, priors, probabilistic programming"
-  # ... el resto de la configuración
+  title: "Luismar Alvarez Carrillo"
+  description: "Estudiante de Matemáticas Puras en la UNAL | Intereses en física matemática, geometría diferencial y métodos computacionales"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: research.qmd
+        text: Investigación
+      - href: events.qmd
+        text: Eventos
+      - href: tutoring.qmd
+        text: Tutorías
+    right:
+      - icon: envelope-fill
+        href: "mailto:luismath.pi3@gmail.com"
+      - icon: github
+        href: https://github.com/luismarcarrillo
+  page-footer:
+    left: "© 2025 Luismar Alvarez Carrillo. Gracias por visitar."
+    right:
+      - icon: envelope-fill
+        href: "mailto:luismath.pi3@gmail.com"
+      - icon: github
+        href: https://github.com/luismarcarrillo
+
+format:
+  html:
+    theme:
+      light: [flatly, "styles.css"]  # flatly es un tema claro base, combinado con tu CSS
+      dark: [darkly, "styles.css"]   # darkly para modo oscuro
+    toc: false
+    css: styles.css
