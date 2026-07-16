@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tutorías — Luismar Alvarez Carrillo</title>
+<title>Notas — Luismar Alvarez Carrillo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -16,47 +16,119 @@
     <a href="index.html" class="brand">Luismar <em>Alvarez</em> Carrillo</a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="notas.html">Notas</a></li>
+      <li><a href="notas.html" class="active">Notas</a></li>
       <li><a href="investigacion.html">Investigación</a></li>
       <li><a href="eventos.html">Eventos</a></li>
-      <li><a href="tutorias.html" class="active">Tutorías</a></li>
+      <li><a href="tutorias.html">Docencia</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="container">
-  <section class="block" style="padding-top:2.8rem;">
-    <span class="eyebrow">05 — Docencia</span>
-    <h2>Monitorías y tutorías personalizadas</h2>
-    <p class="intro">Apoyo en matemáticas, física y herramientas computacionales: preparación para exámenes, talleres e investigación formativa. Priorizo entender el porqué de cada método antes que memorizar procedimientos.</p>
 
-    <div class="grid-2">
-      <div class="card">
-        <span class="label">Matemáticas y física</span>
-        <ul>
-          <li>Cálculo diferencial e integral</li>
-          <li>Álgebra lineal</li>
-          <li>Ecuaciones diferenciales</li>
-          <li>Mecánica clásica</li>
-          <li>Electromagnetismo básico</li>
-        </ul>
+  <section class="block" style="padding-top:2.8rem;">
+    <span class="eyebrow">02 — Producción propia</span>
+    <h2>Notas expositivas</h2>
+    <p class="intro">Escritos cortos donde desarrollo, con mis propias palabras, un resultado o una construcción que he estudiado en profundidad. El objetivo no es resumir un libro, sino mostrar cómo pienso un problema matemático de principio a fin.</p>
+
+    <!--
+      PLANTILLA — reemplaza cada .note-card por una nota real cuando la tengas.
+      Estructura sugerida por nota (3–4 páginas en PDF/LaTeX es suficiente):
+        1. Enunciado del resultado que vas a desarrollar.
+        2. Por qué importa / en qué contexto aparece.
+        3. Demostración o construcción en tus palabras (no copiada del libro).
+        4. Un ejemplo o caso particular que ilustre el resultado.
+      Sube el PDF a tu repositorio (ej. /notas/nombre.pdf) y enlázalo en note-link.
+    -->
+    <div class="note-card pending">
+      <div class="note-top">
+        <h3>Ejemplo: El teorema de Noether desde la geometría simpléctica</h3>
+        <span class="note-date">Pendiente</span>
       </div>
-      <div class="card green">
-        <span class="label">Herramientas computacionales</span>
-        <ul>
-          <li>Python (NumPy, Matplotlib, SymPy)</li>
-          <li>Wolfram Mathematica</li>
-          <li>LaTeX</li>
-          <li>Git y GitHub</li>
-          <li>Simulaciones numéricas</li>
-        </ul>
-      </div>
+      <p>Desarrollo del teorema de Noether como consecuencia de la invariancia bajo flujos hamiltonianos, siguiendo el enfoque de Arnold.</p>
+      <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
     </div>
 
-    <div style="margin-top:1.8rem;">
-      <a href="mailto:luismath.pi3@gmail.com" class="btn primary">Consultar disponibilidad →</a>
+    <div class="note-card pending">
+      <div class="note-top">
+        <h3>Ejemplo: Álgebras de Lie y sus representaciones — una introducción</h3>
+        <span class="note-date">Pendiente</span>
+      </div>
+      <p>Notas de un curso o lectura dirigida, con las demostraciones reescritas y ejemplos propios.</p>
+      <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
     </div>
   </section>
+
+  <section class="block">
+    <span class="eyebrow">02.1 — Lecturas de referencia</span>
+    <h2>Bibliografía de formación</h2>
+    <p class="intro">Textos que han guiado mi formación en física matemática, organizados por el problema que abordan más que por orden alfabético.</p>
+
+    <div class="biblio-group">
+      <h3>Mecánica clásica y geometría</h3>
+      <ul class="biblio-list">
+        <li>
+          <span class="biblio-num">01</span>
+          <div class="biblio-text">
+            <div class="title">Mathematical Methods of Classical Mechanics</div>
+            <div class="author">V.I. Arnold</div>
+            <div class="note">Formulación geométrica de la mecánica: variedades, formas simplécticas y el puente hacia la física moderna.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="biblio-group">
+      <h3>Geometría y topología</h3>
+      <ul class="biblio-list">
+        <li>
+          <span class="biblio-num">02</span>
+          <div class="biblio-text">
+            <div class="title">Geometry, Topology and Physics</div>
+            <div class="author">M. Nakahara</div>
+            <div class="note">Panorama de la geometría diferencial y la topología con la física teórica como hilo conductor.</div>
+          </div>
+        </li>
+        <li>
+          <span class="biblio-num">03</span>
+          <div class="biblio-text">
+            <div class="title">Differential Geometry and Lie Groups for Physicists</div>
+            <div class="author">M. Fecko</div>
+            <div class="note">Tratamiento riguroso de grupos y álgebras de Lie orientado a sus aplicaciones físicas.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="biblio-group">
+      <h3>Teoría cuántica</h3>
+      <ul class="biblio-list">
+        <li>
+          <span class="biblio-num">04</span>
+          <div class="biblio-text">
+            <div class="title">Quantum Mechanics and Quantum Field Theory</div>
+            <div class="author">J. Dimock</div>
+            <div class="note">Aproximación matemáticamente rigurosa a la mecánica cuántica y la teoría cuántica de campos.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="biblio-group">
+      <h3>Ecuaciones diferenciales</h3>
+      <ul class="biblio-list">
+        <li>
+          <span class="biblio-num">05</span>
+          <div class="biblio-text">
+            <div class="title">Partial Differential Equations</div>
+            <div class="author">L.C. Evans</div>
+            <div class="note">Referencia estándar en el análisis moderno de ecuaciones en derivadas parciales.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
 </div>
 
 <footer>
