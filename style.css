@@ -189,6 +189,25 @@ section.block:first-of-type{ border-top: none; }
 .card li::before{ content:"— "; color: var(--ink-faint); }
 .card p{ color: var(--ink-soft); }
 
+/* ---------- Expository notes ---------- */
+.note-card{
+  background: var(--white); border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius); padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem; display:flex; flex-direction:column; gap:0.3rem;
+}
+.note-card .note-top{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; }
+.note-card h3{ font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+.note-card .note-date{ font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; }
+.note-card p{ color: var(--ink-soft); font-size: 0.94rem; }
+.note-card .note-link{ font-family: var(--mono); font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; margin-top:0.3rem; }
+.note-card.pending{
+  border-left-style: dashed; border-color: var(--line-strong); border-left-color: var(--line-strong);
+  background: transparent;
+}
+.note-card.pending h3{ color: var(--ink-faint); font-style: italic; }
+.note-card.pending p{ color: var(--ink-faint); }
+
 /* ---------- Bibliography ---------- */
 .biblio-group{ margin-top: 1.8rem; }
 .biblio-group h3{
