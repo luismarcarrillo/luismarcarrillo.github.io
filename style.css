@@ -1,9 +1,11 @@
 /* ============================================================
    Luismar Alvarez Carrillo — sistema de diseño
-   Paleta: papel/tinta + azul y verde académicos, con un teal
-   "puente" como acento de firma. Tipografía: Spectral (serif de
-   lectura, para títulos) + Inter (texto) + JetBrains Mono
-   (etiquetas, cifras, secciones — el registro "de cuaderno").
+   Paleta: papel/tinta (negro y blanco) + cuatro familias frías
+   integradas: cian-teal, azul cielo, azul-violeta (índigo) y
+   violeta-lavanda. El índigo actúa como acento "puente" entre
+   el azul y el violeta. Tipografía: Spectral (serif de lectura,
+   para títulos) + Inter (texto) + JetBrains Mono (etiquetas,
+   cifras, secciones — el registro "de cuaderno").
    ============================================================ */
 
 :root{
@@ -11,22 +13,35 @@
   --paper-grid:  #e9ebe2;
   --paper-2:     #eef0e7;
   --white:       #ffffff;
-  --ink:         #1c211a;
-  --ink-soft:    #545a4d;
-  --ink-faint:   #8f9587;
-  --line:        #d9dccb;
-  --line-strong: #c3c7b3;
+  --ink:         #14161a;
+  --ink-soft:    #4a4d54;
+  --ink-faint:   #86898f;
+  --line:        #dadce0;
+  --line-strong: #c3c6cc;
 
-  --blue:        #5b93c7;
-  --blue-soft:   #9cc4e8;
-  --blue-tint:   #e8f1fa;
+  --blue:        #3672b8;
+  --blue-soft:   #6ba0d8;
+  --blue-tint:   #dbe8f5;
 
-  --green:       #7f9a6c;
-  --green-soft:  #b3c49f;
-  --green-tint:  #eef2e7;
+  --teal:        #1c8f9e;
+  --teal-soft:   #4fb8c4;
+  --teal-tint:   #d3eef0;
 
-  --accent:      #3d9f82; /* puente azul-verde, color de firma */
-  --accent-soft: #7ecbae;
+  --indigo:      #5f4fae;
+  --indigo-soft: #8d7fce;
+  --indigo-tint: #e1def2;
+
+  --violet:      #8955ab;
+  --violet-soft: #b087cc;
+  --violet-tint: #ecdff2;
+
+  /* alias retrocompatible: el rol que antes cubría "verde" ahora lo cubre teal */
+  --green:       var(--teal);
+  --green-soft:  var(--teal-soft);
+  --green-tint:  var(--teal-tint);
+
+  --accent:      #5f4fae; /* índigo — puente azul-violeta, color de firma */
+  --accent-soft: #8d7fce;
 
   --radius: 3px;
   --serif: 'Spectral', Georgia, serif;
@@ -129,7 +144,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
   animation: draw 2.4s ease forwards 0.2s;
 }
 .curve-blue{ stroke: var(--blue); }
-.curve-green{ stroke: var(--green-soft); animation-delay: 0.5s; }
+.curve-green{ stroke: var(--teal-soft); animation-delay: 0.5s; }
 .sig-dot{ fill: var(--accent); opacity:0; animation: fadein 0.6s ease forwards 2.4s; }
 @keyframes draw{ to{ stroke-dashoffset: 0; } }
 @keyframes fadein{ to{ opacity:1; } }
@@ -151,7 +166,8 @@ section.block:first-of-type{ border-top: none; }
   gap: 1.4rem; margin-top: 1.6rem;
 }
 .def{ border-top: 2px solid var(--blue); padding-top: 0.8rem; }
-.def:nth-child(2n){ border-top-color: var(--green); }
+.def:nth-child(3n+2){ border-top-color: var(--teal); }
+.def:nth-child(3n){ border-top-color: var(--violet); }
 .def h3{
   font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 0.55rem;
@@ -167,9 +183,10 @@ section.block:first-of-type{ border-top: none; }
   text-transform: uppercase; padding: 0.4rem 0.7rem; border-radius: var(--radius);
   border: 1px solid var(--line-strong); color: var(--ink-soft);
 }
-.tag:nth-child(3n+1){ border-color: var(--blue-soft); color: var(--blue); }
-.tag:nth-child(3n+2){ border-color: var(--green-soft); color: var(--green); }
-.tag:nth-child(3n){ border-color: var(--accent-soft); color: var(--accent); }
+.tag:nth-child(4n+1){ border-color: var(--blue-soft); color: var(--blue); }
+.tag:nth-child(4n+2){ border-color: var(--teal-soft); color: var(--teal); }
+.tag:nth-child(4n+3){ border-color: var(--indigo-soft); color: var(--indigo); }
+.tag:nth-child(4n){ border-color: var(--violet-soft); color: var(--violet); }
 
 /* ---------- Cards (theorem-box) ---------- */
 .grid-2{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.3rem; margin-top:1.6rem; }
@@ -178,7 +195,9 @@ section.block:first-of-type{ border-top: none; }
   border-top: 3px solid var(--blue);
   border-radius: var(--radius); padding: 1.3rem 1.4rem;
 }
-.card.green{ border-top-color: var(--green); }
+.card.green{ border-top-color: var(--teal); }
+.card.indigo{ border-top-color: var(--indigo); }
+.card.violet{ border-top-color: var(--violet); }
 .card .label{
   font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 0.5rem; display:block;
