@@ -11,22 +11,22 @@
   --paper-grid:  #e9ebe2;
   --paper-2:     #eef0e7;
   --white:       #ffffff;
-  --ink:         #14180f;
-  --ink-soft:    #4a5044;
-  --ink-faint:   #868c7d;
+  --ink:         #1c211a;
+  --ink-soft:    #545a4d;
+  --ink-faint:   #8f9587;
   --line:        #d9dccb;
   --line-strong: #c3c7b3;
 
-  --blue:        #1d3557;
-  --blue-soft:   #3f6a9c;
-  --blue-tint:   #e7edf4;
+  --blue:        #5b93c7;
+  --blue-soft:   #9cc4e8;
+  --blue-tint:   #e8f1fa;
 
-  --green:       #2c4a37;
-  --green-soft:  #5f8768;
-  --green-tint:  #e9efe6;
+  --green:       #7f9a6c;
+  --green-soft:  #b3c49f;
+  --green-tint:  #eef2e7;
 
-  --accent:      #1f5c56; /* puente azul-verde, color de firma */
-  --accent-soft: #3f8078;
+  --accent:      #3d9f82; /* puente azul-verde, color de firma */
+  --accent-soft: #7ecbae;
 
   --radius: 3px;
   --serif: 'Spectral', Georgia, serif;
@@ -255,4 +255,5 @@ footer svg{ width:16px; height:16px; vertical-align:middle; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero h1{ font-size: 2.1rem; }
   .signature{ margin-top: 1.5rem; }
+}
 }
