@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malla curricular — Luismar Alvarez Carrillo</title>
+<meta name="description" content="Malla curricular de Matemáticas y de Ciencias de la Computación en la Universidad Nacional de Colombia, con el avance, el periodo en que cursé cada materia y el material de estudio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Estilos de respaldo: solo se usan si style.css no está disponible; style.css siempre tiene prioridad. -->
+<style>
+  @layer respaldo {
+    body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #f7f7f4; color: #1f2430; line-height: 1.6; }
+    @media (prefers-color-scheme: dark) { body { background: #14161b; color: #e6e8ee; } }
+    .navbar { border-bottom: 1px solid rgba(127,127,127,.3); }
+    .navbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; padding: 14px 20px; }
+    .brand { font-family: 'Spectral', Georgia, serif; font-size: 1.15rem; text-decoration: none; color: inherit; }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { color: inherit; text-decoration: none; opacity: .75; }
+    .nav-links a.active { opacity: 1; border-bottom: 2px solid currentColor; }
+    .eyebrow { display: block; font-size: .8rem; opacity: .7; margin-bottom: .4rem; }
+    footer { text-align: center; padding: 28px 20px; font-size: 14px; opacity: .8; }
+    .foot-links { display: flex; gap: 14px; justify-content: center; margin-top: 8px; }
+    .foot-links a { color: inherit; }
+    .foot-links svg { width: 20px; height: 20px; }
+  }
+</style>
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* Todo lo de la malla vive bajo .mc y usa clases con prefijo mc- para no chocar con style.css */
+  .mc {
+    --mc-line: rgba(127,127,127,.35);
+    --mc-surf: rgba(127,127,127,.08);
+    --mc-surf-hover: rgba(127,127,127,.16);
+    --mc-accent: #3f7ae0;
+    --mc-ok: #8ed3a4;
+    --mc-ink: #2b2b2b;
+    max-width: 1450px; margin: 0 auto; padding: 28px 20px 56px;
+  }
+  .mc [hidden] { display: none !important; }
+  .mc * { box-sizing: border-box; }
+  .mc :focus-visible { outline: 2px solid var(--mc-accent); outline-offset: 2px; }
+  .mc-muted { opacity: .72; }
+
+  /* Tipologías en versión pastel */
+  .t-fundamentacion { --t1: #f3c58f; --t2: #f8d9b5; --t3: #fbe8d2; --tn: #fff5ea; --cd: #f1bd82; }
+  .t-disciplinar    { --t1: #c9d9a4; --t2: #dce7c0; --t3: #ecf2dc; --tn: #f7faee; --cd: #bdd08f; }
+  .t-libre          { --t1: #a9dcd3; --t2: #c5e8e1; --t3: #def3ef; --tn: #f0faf8; --cd: #98d1c6; }
+  .t-lengua         { --t1: #f2b3c3; --t2: #f7cbd6; --t3: #fbe1e8; --tn: #fef3f6; --cd: #eda6b8; }
+
+  /* Cabecera */
+  .mc-cab { text-align: center; margin-bottom: 22px; }
+  .mc-h1 { font-family: 'Spectral', Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 46px); line-height: 1.1; margin: 0 0 8px; }
+  .mc-norma { margin: 0 0 16px; opacity: .78; font-size: 15px; }
+  .mc-planes { display: inline-flex; gap: 6px; padding: 4px; border: 1px solid var(--mc-line); border-radius: 999px; background: var(--mc-surf); flex-wrap: wrap; justify-content: center; }
+  .mc-plan { font: inherit; font-size: 14px; font-weight: 500; padding: 7px 16px; border-radius: 999px; border: 0; background: transparent; color: inherit; cursor: pointer; opacity: .75; }
+  .mc-plan:hover { opacity: 1; background: var(--mc-surf-hover); }
+  .mc-plan[aria-selected="true"] { opacity: 1; background: var(--mc-accent); color: #fff; }
+
+  /* Modo edición */
+  .mc-edicion { max-width: 760px; margin: 0 auto 22px; padding: 14px 16px; border: 1px dashed var(--mc-line); border-radius: 10px; font-size: 14px; }
+  .mc-edicion p { margin: 0 0 10px; }
+  .mc-botones { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mc-btn { font: inherit; font-size: 13px; font-weight: 500; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--mc-line); background: var(--mc-surf); color: inherit; cursor: pointer; }
+  .mc-btn:hover { background: var(--mc-surf-hover); }
+  .mc-btn.primario { background: var(--mc-accent); border-color: var(--mc-accent); color: #fff; }
+  .mc-export { margin-top: 12px; }
+  .mc-export textarea { width: 100%; min-height: 150px; font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 10px; border-radius: 8px; border: 1px solid var(--mc-line); background: #fff; color: #1f2430; }
+
+  /* Leyenda */
+  .mc-leyenda { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 32px; margin-bottom: 8px; }
+  .mc-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 640px; }
+  .mc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--mc-line); background: var(--mc-surf); color: inherit; font: inherit; font-size: 13px; }
+  button.mc-chip { cursor: pointer; }
+  button.mc-chip:hover { background: var(--mc-surf-hover); }
+  button.mc-chip[aria-pressed="true"] { border-color: var(--mc-accent); box-shadow: 0 0 0 1px var(--mc-accent) inset; }
+  .mc-sw { width: 22px; height: 12px; border-radius: 3px; background: var(--cd); }
+  .mc-estr { display: flex; align-items: flex-end; gap: 10px; padding-left: 28px; border-left: 1px solid var(--mc-line); }
+  .mc-estr-t { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: 17px; align-self: center; margin-right: 6px; }
+  .mc-estr-i { text-align: center; font-size: 11.5px; line-height: 1.25; max-width: 84px; }
+  .mc-estr-i b { display: block; font-weight: 600; color: var(--mc-ink); padding: 4px 0; margin-bottom: 4px; font-size: 13px; }
+  .mc-estr-i:nth-child(2) b { background: #c9d9a4; }
+  .mc-estr-i:nth-child(3) b { background: #dce7c0; }
+  .mc-estr-i:nth-child(4) b { background: #ecf2dc; }
+  .mc-ayuda { text-align: center; font-size: 13px; margin: 8px 0 20px; }
+
+  /* Progreso */
+  .mc-progreso { max-width: 560px; margin: 0 auto 26px; text-align: center; font-size: 14px; }
+  .mc-bar { display: flex; height: 8px; border-radius: 999px; background: var(--mc-surf-hover); overflow: hidden; margin-top: 8px; }
+  .mc-bar .ok { background: var(--mc-ok); transition: width .4s ease; }
+  .mc-bar .en { background: #f6d98b; transition: width .4s ease; }
+
+  /* Malla */
+  .mc-malla { display: flex; gap: 14px; overflow-x: auto; justify-content: safe center; padding: 6px 6px 30px; }
+  .mc-sem { width: 152px; flex: none; display: flex; flex-direction: column; gap: 12px; }
+  .mc-sem-head { text-align: center; }
+  .mc-sem-n { font-family: 'Spectral', Georgia, serif; font-size: 26px; line-height: 1.1; }
+  .mc-sem-c { font-size: 12px; opacity: .7; }
+  .mc-hueco { border: 2px dashed var(--mc-line); border-radius: 8px; padding: 18px 12px; text-align: center; font-size: 13px; opacity: .75; }
+
+  .mc-asig {
+    appearance: none; border: 0; padding: 0; font: inherit; cursor: pointer;
+    display: flex; flex-direction: column; width: 100%;
+    text-align: center; border-radius: 4px; overflow: hidden; position: relative;
+    box-shadow: 0 1px 4px rgba(0,0,0,.22);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .2s ease;
+  }
+  .mc-asig:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,.28); }
+  .mc-asig.dim { opacity: .2; }
+  .mc-cred { display: grid; grid-template-columns: 1fr 1fr 1fr; font-size: 12px; font-weight: 600; color: var(--mc-ink); }
+  .mc-cred span { padding: 4px 0; }
+  .mc-cred .c1 { background: var(--t1); }
+  .mc-cred .c2 { background: var(--t2); }
+  .mc-cred .c3 { background: var(--t3); }
+  .mc-nombre { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 66px; padding: 10px 8px; background: var(--tn); color: var(--mc-ink); font-size: 12.5px; font-weight: 500; line-height: 1.25; text-wrap: balance; }
+  .mc-p { display: block; margin-top: 3px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; opacity: .7; }
+  .mc-cod { display: flex; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mc-ink); }
+  .mc-cod .mc-c { flex: 1; background: var(--cd); padding: 5px 8px; text-align: left; }
+  .mc-cod .mc-i { width: 34px; display: grid; place-items: center; font-family: inherit; }
+  .mc-i.obl { background: #f4ab9d; }
+  .mc-i.opt { background: #a9d6ee; }
+
+  .mc-asig.aprobada .mc-n { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+  .mc-asig.aprobada .mc-nombre, .mc-asig.cursando .mc-nombre { padding-top: 24px; }
+  .mc-asig.aprobada .mc-n { opacity: .72; }
+  .mc-asig.aprobada::after, .mc-asig.cursando::after {
+    position: absolute; top: 28px; right: 6px; line-height: 1; font-weight: 700; color: #16351f;
+  }
+  .mc-asig.aprobada::after { content: "✓"; width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; background: var(--mc-ok); font-size: 12px; }
+  .mc-asig.cursando::after { content: "en curso"; padding: 3px 7px; border-radius: 999px; background: #f6d98b; font-size: 10px; }
+
+  /* Historial */
+  .mc-hist { max-width: 760px; margin: 12px auto 0; }
+  .mc-h2 { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: 26px; margin: 0 0 14px; }
+  .mc-per { padding: 14px 0; border-top: 1px solid var(--mc-line); }
+  .mc-per h3 { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: 19px; margin: 0 0 6px; }
+  .mc-per h3 span { font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 13px; opacity: .7; margin-left: 8px; }
+  .mc-per ul { margin: 0; padding-left: 20px; }
+  .mc-per li { margin-bottom: 2px; }
+  .mc-per li span { opacity: .7; font-size: 13px; }
+
+  /* Detalle */
+  .mc-volver { font: inherit; font-size: 14px; font-weight: 500; background: none; border: 0; padding: 6px 0; cursor: pointer; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .mc-titulo { font-family: 'Spectral', Georgia, serif; font-weight: 400; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 10px 0 14px; }
+  .mc-titulo:focus { outline: none; }
+  .mc-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 20px; }
+  .mc-tag { font-size: 13px; padding: 4px 11px; border-radius: 999px; background: var(--mc-surf-hover); }
+  .mc-tag.ok { background: var(--mc-ok); color: #16351f; font-weight: 600; }
+  .mc-tag.en { background: #f6d98b; color: #3d2f05; font-weight: 600; }
+  .mc-edit { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 0 0 22px; padding: 14px; border: 1px dashed var(--mc-line); border-radius: 10px; }
+  .mc-edit label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+  .mc-edit input, .mc-edit select { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--mc-line); background: #fff; color: #1f2430; min-width: 150px; }
+  .mc-sep { border: 0; border-top: 1px solid var(--mc-line); margin: 0 0 26px; }
+
+  .mc-lms { display: grid; grid-template-columns: 210px 1fr; gap: 32px; }
+  .mc-tabs { display: flex; flex-direction: column; gap: 6px; align-self: start; }
+  .mc-tab { font: inherit; font-size: 14px; text-align: left; white-space: nowrap; padding: 11px 14px; border-radius: 8px; cursor: pointer; border: 1px solid var(--mc-line); background: var(--mc-surf); color: inherit; }
+  .mc-tab:hover { background: var(--mc-surf-hover); }
+  .mc-tab.active { border-left: 4px solid var(--mc-accent); font-weight: 600; background: var(--mc-surf-hover); }
+  @media (max-width: 720px) {
+    .mc-lms { grid-template-columns: 1fr; gap: 18px; }
+    .mc-tabs { flex-direction: row; overflow-x: auto; }
+    .mc-estr { padding-left: 0; border-left: 0; }
+  }
+
+  .mc-panel { background: var(--mc-surf); border: 1px solid var(--mc-line); border-radius: 10px; padding: 24px; }
+  .mc-panel h3 { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: 23px; margin: 0 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--mc-line); }
+  .mc-panel h4 { font-family: 'Spectral', Georgia, serif; font-weight: 600; font-size: 18px; margin: 18px 0 6px; }
+  .mc-panel p { margin: 0 0 12px; max-width: 68ch; }
+  .mc-vacio { opacity: .7; }
+  .mc-libro { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--mc-line); }
+  .mc-libro:last-child { border-bottom: 0; }
+  .mc-libro-t { font-weight: 600; }
+  .mc-libro-a { font-size: 14px; opacity: .75; }
+  .mc-formula { margin: 14px 0; padding: 14px; text-align: center; overflow-x: auto; background: var(--mc-surf-hover); border-radius: 8px; font-family: 'Spectral', 'Cambria Math', Georgia, serif; font-size: 1.35em; }
+  .mc-lista { margin: 0; padding-left: 20px; }
+  .mc-lista li { margin-bottom: 8px; }
+  .mc-pend { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--mc-surf-hover); margin-left: 6px; }
+
+  @media (prefers-reduced-motion: reduce) { .mc * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">Luismar <em>Alvarez</em> Carrillo</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="malla.html" class="active">Malla</a></li>
+      <li><a href="notas.html">Notas</a></li>
+      <li><a href="investigacion.html">Investigación</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="tutorias.html">Docencia</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="mc" id="mc">
+
+  <!-- ===== Vista de la malla ===== -->
+  <section id="view-malla">
+    <header class="mc-cab">
+      <span class="eyebrow">Plan de estudios</span>
+      <h1 class="mc-h1" id="plan-titulo"></h1>
+      <p class="mc-norma" id="plan-norma"></p>
+      <div class="mc-planes" role="tablist" aria-label="Plan de estudios">
+        <button class="mc-plan" role="tab" data-plan="matematicas" aria-selected="true">Matemáticas</button>
+        <button class="mc-plan" role="tab" data-plan="computacion" aria-selected="false">Ciencias de la Computación</button>
+      </div>
+    </header>
+
+    <div class="mc-edicion" id="panel-edicion" hidden>
+      <p><strong>Modo edición.</strong> Abre una materia para marcar su estado y el periodo en que la viste. Al terminar, copia el avance y pégalo en <code>AVANCE</code> dentro de <code>malla.html</code>; los visitantes solo ven lo que esté guardado en el archivo.</p>
+      <div class="mc-botones">
+        <button class="mc-btn primario" type="button" id="btn-exportar">Copiar avance</button>
+        <button class="mc-btn" type="button" id="btn-descartar">Descartar cambios</button>
+      </div>
+      <div class="mc-export" id="export" hidden>
+        <p id="export-msg" class="mc-muted"></p>
+        <textarea id="export-ta" readonly spellcheck="false"></textarea>
+      </div>
+    </div>
+
+    <div class="mc-leyenda">
+      <div class="mc-chips" id="leyenda"></div>
+      <div class="mc-estr" aria-label="Estructura de créditos">
+        <span class="mc-estr-t">Estructura de créditos</span>
+        <span class="mc-estr-i"><b>4</b>Créditos</span>
+        <span class="mc-estr-i"><b>4</b>Horas presenciales</span>
+        <span class="mc-estr-i"><b>4</b>Horas estudiante</span>
+      </div>
+    </div>
+    <p class="mc-ayuda mc-muted">Toca una asignatura para ver su detalle. Toca una tipología para resaltarla en la malla.</p>
+
+    <div class="mc-progreso" id="progreso" hidden>
+      <div id="p-texto"></div>
+      <div class="mc-bar" role="progressbar" aria-label="Créditos aprobados" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="ok" id="p-ok" style="width:0"></span><span class="en" id="p-en" style="width:0"></span>
+      </div>
+    </div>
+
+    <div class="mc-malla" id="malla"></div>
+
+    <section class="mc-hist" id="historial" hidden>
+      <h2 class="mc-h2">Historial por periodo</h2>
+      <div id="hist-lista"></div>
+    </section>
+  </section>
+
+  <!-- ===== Vista de detalle de una asignatura ===== -->
+  <section id="view-detalle" hidden style="max-width:1000px;margin:0 auto;">
+    <button class="mc-volver" id="btn-volver" type="button">Volver a la malla</button>
+    <h2 class="mc-titulo" id="d-titulo" tabindex="-1"></h2>
+    <div class="mc-meta" id="d-meta"></div>
+    <div class="mc-edit" id="d-edit" hidden></div>
+    <hr class="mc-sep">
+
+    <div class="mc-lms">
+      <div class="mc-tabs" role="tablist" aria-label="Secciones de la asignatura">
+        <button class="mc-tab active" role="tab" data-tab="tab-resumen" aria-selected="true">Resumen del curso</button>
+        <button class="mc-tab" role="tab" data-tab="tab-libros" aria-selected="false">Bibliografía</button>
+        <button class="mc-tab" role="tab" data-tab="tab-apuntes" aria-selected="false">Apuntes y códigos</button>
+        <button class="mc-tab" role="tab" data-tab="tab-proyectos" aria-selected="false">Proyectos</button>
+      </div>
+      <div>
+        <section class="mc-panel mc-tabpanel" id="tab-resumen" role="tabpanel">
+          <h3>Descripción</h3>
+          <p id="d-desc"></p>
+          <div id="d-enlaces"></div>
+        </section>
+        <section class="mc-panel mc-tabpanel" id="tab-libros" role="tabpanel" hidden>
+          <h3>Bibliografía principal</h3>
+          <div id="d-libros"></div>
+        </section>
+        <section class="mc-panel mc-tabpanel" id="tab-apuntes" role="tabpanel" hidden>
+          <h3>Notas de clase y ejercicios</h3>
+          <div id="d-apuntes"></div>
+        </section>
+        <section class="mc-panel mc-tabpanel" id="tab-proyectos" role="tabpanel" hidden>
+          <h3>Proyectos y presentaciones</h3>
+          <div id="d-proyectos"></div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Luismar Alvarez Carrillo</p>
+  <div class="foot-links">
+    <a href="mailto:luismath.pi3@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg></a>
+    <a href="https://github.com/luismarcarrillo" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-11A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =====================================================================
+     TU AVANCE  —  lo único que necesitas editar a mano (o pegar desde el modo edición)
+
+     Cada materia se identifica por su código. Las asignaturas de libre elección
+     y las optativas no tienen código, así que usan  plan-semestre-posición
+     (por ejemplo 'matematicas-VI-3' es la tercera tarjeta del semestre VI).
+
+       estado : 'aprobada' | 'cursando'
+       periodo: año-semestre en que la viste, por ejemplo '2025-1'
+       nombre : (solo libre elección u optativas) la materia que elegiste
+     ===================================================================== */
+  const AVANCE = {
+    // '4100810': { estado: 'aprobada', periodo: '2025-1' },
+    // 'matematicas-VI-3': { estado: 'cursando', periodo: '2027-2', nombre: 'Mecánica Analítica' },
+  };
+
+  /* ================= Datos del plan ================= */
+  // cr = créditos - horas presenciales - horas estudiante
+  const TIPOS = {
+    fundamentacion: 'Fundamentación',
+    disciplinar: 'Disciplinar',
+    libre: 'Libre elección',
+    lengua: 'Lengua extranjera'
+  };
+  const C = (nombre, codigo, cr, tipo) => ({ nombre, codigo, cr, tipo });
+  const LIBRE = (cr) => C('Libre elección', '#Código.', cr, 'libre');
+  const OPTATIVA = (cr) => C('Asignatura Disciplinar Optativa', '#Código.', cr, 'disciplinar');
+
+  const PLANES = {
+    matematicas: {
+      corto: 'Matemáticas',
+      titulo: 'Matemáticas',
+      norma: 'Resolución CFCEN-023 de 2010',
+      semestres: [
+        { n: 'I', cursos: [
+          C('Fundamentos de Matemáticas', '4100810', '4-4-8', 'fundamentacion'),
+          C('Cálculo Diferencial', '1000004', '4-4-8', 'fundamentacion'),
+          C('Geometría', '4100865', '4-4-8', 'fundamentacion'),
+          LIBRE('4-4-4')
+        ]},
+        { n: 'II', cursos: [
+          C('Álgebra Lineal', '1000003', '4-4-8', 'fundamentacion'),
+          C('Cálculo Integral', '1000005', '4-4-8', 'fundamentacion'),
+          C('Métodos Numéricos', '4100887', '4-4-8', 'fundamentacion'),
+          C('Sistemas Numéricos', '4100868', '4-4-8', 'fundamentacion'),
+          C('Inglés I', '1000044', '3-4-5', 'lengua')
+        ]},
+        { n: 'III', cursos: [
+          C('Conjuntos y Combinatoria', '4100804', '4-4-8', 'fundamentacion'),
+          C('Cálculo Vectorial', '1000006', '4-4-8', 'fundamentacion'),
+          C('Introducción a la Optimización', '4100866', '4-4-8', 'disciplinar'),
+          C('Física: Mecánica', '1000019', '4-4-8', 'fundamentacion'),
+          C('Inglés II', '1000045', '3-4-5', 'lengua')
+        ]},
+        { n: 'IV', cursos: [
+          C('Ecuaciones Diferenciales', '1000007', '4-4-8', 'fundamentacion'),
+          C('Introducción al Análisis Real', '4100803', '4-4-8', 'disciplinar'),
+          C('Probabilidad', '4101419', '4-4-8', 'fundamentacion'),
+          C('Física: Electricidad y Magnetismo', '1000017', '4-4-8', 'fundamentacion'),
+          C('Inglés III', '1000046', '3-4-5', 'lengua')
+        ]},
+        { n: 'V', cursos: [
+          C('Grupos y Anillos', '4100805', '4-4-8', 'disciplinar'),
+          C('Integración y Series', '4100800', '4-4-8', 'disciplinar'),
+          C('Topología General', '4100808', '4-4-8', 'disciplinar'),
+          C('Análisis Numérico', '4100802', '4-4-8', 'disciplinar'),
+          C('Inglés IV', '1000047', '3-4-5', 'lengua')
+        ]},
+        { n: 'VI', cursos: [
+          C('Teoría de Cuerpos', '4100807', '4-4-8', 'disciplinar'),
+          C('Análisis Vectorial', '4100801', '4-4-8', 'disciplinar'),
+          OPTATIVA('4-4-8'),
+          LIBRE('4-4-4'),
+          LIBRE('4-4-4')
+        ]},
+        { n: 'VII', cursos: [
+          C('Álgebra Multilineal y Formas Canónicas', '4100799', '4-4-8', 'disciplinar'),
+          C('Variable Compleja', '4100809', '4-4-8', 'disciplinar'),
+          OPTATIVA('4-4-8'),
+          LIBRE('4-4-4'),
+          LIBRE('4-4-4')
+        ]},
+        { n: 'VIII', cursos: [
+          C('Trabajo de Grado', '4100877', '8-0-24', 'disciplinar'),
+          C('Lógica Matemática', '4100806', '4-4-8', 'disciplinar'),
+          LIBRE('4-4-8'),
+          LIBRE('4-4-8')
+        ]}
+      ]
+    },
+
+    computacion: {
+      corto: 'Ciencias de la Computación',
+      titulo: 'Ciencias de la Computación',
+      norma: 'Acuerdo 058 de 2020 y Acuerdo 71 de 2021',
+      semestres: [
+        { n: 'I', cursos: [
+          C('Fundamentos de matemáticas', '4100810', '4-4-8', 'fundamentacion'),
+          C('Cálculo Diferencial', '1000004', '4-4-8', 'fundamentacion'),
+          C('Introducción a las ciencias de la computación', '4200887', '3-3-6', 'disciplinar'),
+          C('Universidad y sociedad', '4200885', '2-2-4', 'fundamentacion'),
+          LIBRE('3-4-5')
+        ]},
+        { n: 'II', cursos: [
+          C('Álgebra Lineal', '1000003', '4-4-8', 'fundamentacion'),
+          C('Cálculo Integral', '1000005', '4-4-8', 'fundamentacion'),
+          C('Sistemas numéricos', '4100868', '4-4-8', 'fundamentacion'),
+          C('Programación I', '4100546', '3-4-6', 'fundamentacion'),
+          C('Fundamentos de ética', '4200884', '2-2-4', 'fundamentacion'),
+          C('Inglés I', '1000044', '3-4-5', 'lengua')
+        ]},
+        { n: 'III', cursos: [
+          C('Conjuntos y combinatoria', '4100804', '4-4-8', 'fundamentacion'),
+          C('Cálculo en varias variables', '1000006Z', '4-4-8', 'fundamentacion'),
+          C('Probabilidad', '4101419', '4-4-8', 'fundamentacion'),
+          C('Programación II', '4100547', '3-4-6', 'fundamentacion'),
+          C('Derechos humanos y equidad', '4200886', '2-2-4', 'fundamentacion'),
+          C('Inglés II', '1000045', '3-4-5', 'lengua')
+        ]},
+        { n: 'IV', cursos: [
+          C('Introducción al Análisis Real', '4100803', '4-4-8', 'fundamentacion'),
+          C('Ecuaciones Diferenciales', '1000007', '4-4-8', 'fundamentacion'),
+          C('Inferencia Estadística', '4200883', '4-4-8', 'fundamentacion'),
+          C('Estructuras de Datos', '4100548', '3-4-6', 'fundamentacion'),
+          LIBRE('3-4-5'),
+          C('Inglés III', '1000046', '3-4-5', 'lengua')
+        ]},
+        { n: 'V', cursos: [
+          C('Asignatura Optativa Fundamentación', '#Código.', '4-4-8', 'disciplinar'),
+          C('Análisis Numérico', '4100802', '4-4-8', 'disciplinar'),
+          C('Bases de Datos I', '4100552', '3-4-5', 'disciplinar'),
+          C('Análisis y Diseño de Algoritmos', '4100549', '3-4-6', 'disciplinar'),
+          C('Inglés IV', '1000047', '3-4-5', 'lengua')
+        ]},
+        { n: 'VI', cursos: [
+          C('Optativas Ciencias Naturales', '#Código.', '4-4-8', 'disciplinar'),
+          C('Optativas Computación Científica', '#Código.', '4-4-8', 'disciplinar'),
+          C('Sistemas Inteligentes Computacionales', '4100569', '3-4-6', 'disciplinar'),
+          C('Introducción a la Teoría de la Computación', '4200888', '4-4-8', 'disciplinar'),
+          LIBRE('3-4-5')
+        ]},
+        { n: 'VII', cursos: [
+          C('Optativas Computación Aplicada', '#Código.', '4-4-8', 'disciplinar'),
+          C('Optativas Computación Científica', '#Código.', '4-4-8', 'disciplinar'),
+          C('Optativas Algoritmos y Computación', '#Código.', '4-4-8', 'disciplinar'),
+          LIBRE('3-4-5'),
+          LIBRE('3-4-5')
+        ]},
+        { n: 'VIII', cursos: [
+          C('Optativas Computación Aplicada', '#Código.', '4-4-8', 'disciplinar'),
+          C('Optativas Sistemas De Cómputo', '#Código.', '4-4-8', 'disciplinar'),
+          C('Optativas Algoritmos y Computación', '#Código.', '4-4-8', 'disciplinar'),
+          LIBRE('4-4-5'),
+          LIBRE('4-4-5')
+        ]},
+        { n: 'IX', cursos: [
+          C('Trabajo de Grado', '4200901', '8-8-16', 'disciplinar'),
+          LIBRE('3-4-5'),
+          LIBRE('3-4-5')
+        ]}
+      ]
+    }
+  };
+
+  /* Material de estudio por código de asignatura.
+     Campos opcionales: desc, libros [{titulo, autor, nota}], apuntes (HTML),
+     proyectos [{titulo, nota, url, pendiente}], enlaces [{titulo, url}] */
+  const CONTENIDO = {
+    '1000003': {
+      desc: 'Estudio riguroso de los espacios vectoriales, transformaciones lineales, ortogonalidad y teoría espectral. Fundamento para el modelamiento matemático y la estadística.',
+      libros: [
+        { titulo: 'Linear Algebra and Its Applications', autor: 'Gilbert Strang', nota: 'Texto principal para proyecciones ortogonales y subespacios.' }
+      ],
+      apuntes:
+        '<h4>1. Proyecciones ortogonales</h4>' +
+        '<p>La proyección de un vector <i>b</i> sobre el espacio columna de la matriz <i>A</i> se obtiene resolviendo la ecuación normal:</p>' +
+        '<div class="mc-formula"><math display="block"><msup><mi>A</mi><mi>T</mi></msup><mi>A</mi>' +
+        '<mover accent="true"><mi mathvariant="normal">𝐱</mi><mo>^</mo></mover><mo>=</mo>' +
+        '<msup><mi>A</mi><mi>T</mi></msup><mi mathvariant="normal">𝐛</mi></math></div>',
+      proyectos: [
+        { titulo: 'Proyecto: Pares Ordenados 2026', nota: 'Sitio web HTML o notebook', pendiente: true }
+      ]
+    },
+    '4100887': {
+      desc: 'Aplicación y análisis de algoritmos computacionales para la resolución aproximada de problemas matemáticos continuos.',
+      libros: [
+        { titulo: 'Análisis Numérico', autor: 'Richard L. Burden y J. Douglas Faires', nota: '' }
+      ],
+      apuntes:
+        '<h4>1. Interpolación y ajuste de curvas</h4>' +
+        '<p>Estudio de aproximación funcional utilizando <em>splines polinomiales</em> y <em>B-splines</em>.</p>',
+      proyectos: [
+        { titulo: 'Presentación LaTeX (Beamer): «Introducción a los B-splines»', nota: '' }
+      ]
+    }
+  };
+
+  /* ================= Estado ================= */
+  const EDITAR = new URLSearchParams(location.search).has('editar');
+  const KEY_BORRADOR = 'mc-avance-borrador-v1';
+  const BASE_SIG = JSON.stringify(AVANCE);
+  let avance = JSON.parse(BASE_SIG);
+  if (EDITAR) {
+    try {
+      const r = JSON.parse(localStorage.getItem(KEY_BORRADOR) || 'null');
+      // El borrador solo vale mientras AVANCE en el archivo no haya cambiado
+      if (r && r.base === BASE_SIG && r.data && typeof r.data === 'object') avance = r.data;
+    } catch (e) { /* sin almacenamiento */ }
+  }
+  let planActual = 'matematicas';
+  let filtroTipo = null;
+  let cursoActual = null;
+  let scrollGuardado = 0;
+
+  /* ================= Utilidades ================= */
+  const $ = (id) => document.getElementById(id);
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+  const parseCr = (cr) => { const [cred, hp, hi] = cr.split('-').map(Number); return { cred, hp, hi }; };
+  const esSlot = (cu) => cu.codigo.charAt(0) === '#';
+  const claveDe = (planId, semN, i, cu) => esSlot(cu) ? planId + '-' + semN + '-' + (i + 1) : cu.codigo;
+  const nombreVisible = (cu, key) => (avance[key] && avance[key].nombre) || cu.nombre;
+  const hayAvance = () => Object.keys(avance).length > 0;
+
+  function cursosDe(planId) {
+    const out = [];
+    PLANES[planId].semestres.forEach((s, si) => (s.cursos || []).forEach((cu, i) => {
+      out.push({ s, si, i, cu, key: claveDe(planId, s.n, i, cu) });
+    }));
+    return out;
+  }
+  function apariciones(codigo) {
+    const out = [];
+    Object.values(PLANES).forEach((p) => p.semestres.forEach((s) => (s.cursos || []).forEach((cu) => {
+      if (cu.codigo === codigo) out.push(p.corto + ' (semestre ' + s.n + ')');
+    })));
+    return out;
+  }
+  function guardarBorrador() {
+    if (!EDITAR) return;
+    try { localStorage.setItem(KEY_BORRADOR, JSON.stringify({ base: BASE_SIG, data: avance })); } catch (e) { /* sin almacenamiento */ }
+  }
+  function setAv(key, campo, valor) {
+    const cur = Object.assign({}, avance[key]);
+    valor = (valor || '').trim();
+    if (valor) cur[campo] = valor; else delete cur[campo];
+    if (Object.keys(cur).length) avance[key] = cur; else delete avance[key];
+    guardarBorrador();
+  }
+  function generarSnippet() {
+    const lineas = Object.keys(avance).sort().map((k) => '  ' + JSON.stringify(k) + ': ' + JSON.stringify(avance[k]) + ',');
+    return 'const AVANCE = {\n' + lineas.join('\n') + (lineas.length ? '\n' : '') + '};';
+  }
+
+  /* ================= Malla ================= */
+  function crearTarjeta(planId, s, si, i, cu) {
+    const key = claveDe(planId, s.n, i, cu);
+    const st = avance[key] || {};
+    const { cred, hp, hi } = parseCr(cu.cr);
+    const nombre = nombreVisible(cu, key);
+    const b = el('button', 'mc-asig t-' + cu.tipo + (st.estado === 'aprobada' ? ' aprobada' : '') + (st.estado === 'cursando' ? ' cursando' : ''));
+    b.type = 'button';
+    b.dataset.key = key;
+    b.dataset.tipo = cu.tipo;
+    b.title = nombre + ': ' + cred + ' créditos, ' + hp + ' h presenciales, ' + hi + ' h estudiante';
+    b.setAttribute('aria-label', nombre + ', ' + cred + ' créditos, ' + TIPOS[cu.tipo] +
+      (esSlot(cu) ? ', optativa' : ', obligatoria') +
+      (st.estado === 'aprobada' ? ', aprobada' : st.estado === 'cursando' ? ', en curso' : '') +
+      (st.periodo ? ', periodo ' + st.periodo : ''));
+
+    const fila = el('span', 'mc-cred');
+    [cred, hp, hi].forEach((n, k) => fila.append(el('span', 'c' + (k + 1), String(n))));
+    const cuerpo = el('span', 'mc-nombre');
+    cuerpo.append(el('span', 'mc-n', nombre));
+    if (st.periodo) cuerpo.append(el('span', 'mc-p', st.periodo));
+    const cod = el('span', 'mc-cod');
+    cod.append(el('span', 'mc-c', cu.codigo), el('span', 'mc-i ' + (esSlot(cu) ? 'opt' : 'obl'), esSlot(cu) ? '♥' : '🎓'));
+    b.append(fila, cuerpo, cod);
+    b.addEventListener('click', () => abrirMateria(planId, si, i));
+    return b;
+  }
+
+  function renderLeyenda() {
+    const cont = $('leyenda');
+    cont.replaceChildren();
+    Object.keys(TIPOS).forEach((t) => {
+      const b = el('button', 'mc-chip');
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(filtroTipo === t));
+      b.append(el('span', 'mc-sw t-' + t), document.createTextNode(TIPOS[t]));
+      b.addEventListener('click', () => {
+        filtroTipo = filtroTipo === t ? null : t;
+        renderLeyenda();
+        aplicarFiltro();
+      });
+      cont.append(b);
+    });
+    cont.append(el('span', 'mc-chip', '🎓 Obligatoria'), el('span', 'mc-chip', '♥ Optativa'));
+    if (hayAvance() || EDITAR) cont.append(el('span', 'mc-chip', '✓ Aprobada, tachada'), el('span', 'mc-chip', 'En curso'));
+  }
+
+  function aplicarFiltro() {
+    document.querySelectorAll('.mc-asig').forEach((c) => {
+      c.classList.toggle('dim', !!filtroTipo && c.dataset.tipo !== filtroTipo);
+    });
+  }
+
+  function actualizarProgreso() {
+    let total = 0, ok = 0, en = 0;
+    cursosDe(planActual).forEach(({ cu, key }) => {
+      const c = parseCr(cu.cr).cred;
+      total += c;
+      const e = (avance[key] || {}).estado;
+      if (e === 'aprobada') ok += c; else if (e === 'cursando') en += c;
+    });
+    $('progreso').hidden = !EDITAR && !hayAvance();
+    const pOk = total ? Math.round((ok / total) * 100) : 0;
+    const pEn = total ? Math.round((en / total) * 100) : 0;
+    $('p-texto').textContent = ok + ' de ' + total + ' créditos aprobados' + (en ? ', ' + en + ' en curso' : '');
+    $('p-ok').style.width = pOk + '%';
+    $('p-en').style.width = pEn + '%';
+    $('p-ok').parentNode.setAttribute('aria-valuenow', String(pOk));
+  }
+
+  function renderHistorial() {
+    const porPeriodo = {};
+    cursosDe(planActual).forEach(({ s, cu, key }) => {
+      const st = avance[key];
+      if (st && st.periodo) {
+        (porPeriodo[st.periodo] = porPeriodo[st.periodo] || []).push({
+          nombre: nombreVisible(cu, key), cred: parseCr(cu.cr).cred, estado: st.estado, sem: s.n
+        });
+      }
+    });
+    const periodos = Object.keys(porPeriodo).sort();
+    $('historial').hidden = !periodos.length;
+    const cont = $('hist-lista');
+    cont.replaceChildren();
+    periodos.forEach((p) => {
+      const items = porPeriodo[p];
+      const bloque = el('div', 'mc-per');
+      const h = el('h3', '', p);
+      h.append(el('span', '', items.reduce((a, x) => a + x.cred, 0) + ' créditos'));
+      const ul = el('ul');
+      items.forEach((x) => {
+        const li = el('li', '', x.nombre + ' ');
+        li.append(el('span', '', 'semestre ' + x.sem + ' del plan' + (x.estado ? ', ' + (x.estado === 'aprobada' ? 'aprobada' : 'en curso') : '')));
+        ul.append(li);
+      });
+      bloque.append(h, ul);
+      cont.append(bloque);
+    });
+  }
+
+  function renderPlan() {
+    const p = PLANES[planActual];
+    $('plan-titulo').textContent = p.titulo;
+    $('plan-norma').textContent = 'Normativa vigente del plan de estudios: ' + p.norma;
+    $('panel-edicion').hidden = !EDITAR;
+    renderLeyenda();
+
+    const grid = $('malla');
+    grid.replaceChildren();
+    p.semestres.forEach((s, si) => {
+      const col = el('div', 'mc-sem');
+      const head = el('div', 'mc-sem-head');
+      head.append(el('div', 'mc-sem-n', s.n));
+      const cr = s.cursos.reduce((a, cu) => a + parseCr(cu.cr).cred, 0);
+      head.append(el('div', 'mc-sem-c', cr + ' créditos'));
+      col.append(head);
+      s.cursos.forEach((cu, i) => col.append(crearTarjeta(planActual, s, si, i, cu)));
+      grid.append(col);
+    });
+    aplicarFiltro();
+    actualizarProgreso();
+    renderHistorial();
+  }
+
+  function marcarPlan(id) {
+    planActual = id;
+    filtroTipo = null;
+    document.querySelectorAll('.mc-plan').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.plan === id)));
+  }
+
+  /* ================= Detalle ================= */
+  function renderMeta() {
+    const { planId, cu, key } = cursoActual;
+    const st = avance[key] || {};
+    const { cred, hp, hi } = parseCr(cu.cr);
+    const meta = $('d-meta');
+    meta.replaceChildren();
+    if (st.estado === 'aprobada') meta.append(el('span', 'mc-tag ok', 'Aprobada'));
+    else if (st.estado === 'cursando') meta.append(el('span', 'mc-tag en', 'En curso'));
+    if (st.periodo) meta.append(el('span', 'mc-tag', 'Vista en ' + st.periodo));
+    meta.append(
+      el('span', 'mc-tag', 'Código: ' + cu.codigo),
+      el('span', 'mc-tag', 'Créditos: ' + cred),
+      el('span', 'mc-tag', 'Horas presenciales: ' + hp),
+      el('span', 'mc-tag', 'Horas estudiante: ' + hi),
+      el('span', 'mc-tag', 'Tipología: ' + TIPOS[cu.tipo]),
+      el('span', 'mc-tag', esSlot(cu) ? 'Optativa' : 'Obligatoria')
+    );
+    if (!esSlot(cu)) {
+      const donde = apariciones(cu.codigo);
+      if (donde.length > 1) meta.append(el('span', 'mc-tag', 'Aparece en: ' + donde.join(' y ')));
+    }
+    $('d-titulo').textContent = nombreVisible(cu, key);
+  }
+
+  function renderEdicionDetalle() {
+    const box = $('d-edit');
+    box.replaceChildren();
+    box.hidden = !EDITAR;
+    if (!EDITAR) return;
+    const { cu, key } = cursoActual;
+    const st = avance[key] || {};
+
+    const lEstado = el('label', '', 'Estado');
+    const sel = el('select');
+    [['', 'Pendiente'], ['cursando', 'En curso'], ['aprobada', 'Aprobada']].forEach(([v, t]) => {
+      const o = el('option', '', t);
+      o.value = v;
+      if ((st.estado || '') === v) o.selected = true;
+      sel.append(o);
+    });
+    sel.addEventListener('change', () => { setAv(key, 'estado', sel.value); renderMeta(); });
+    lEstado.append(sel);
+
+    const lPer = el('label', '', 'Periodo en que la viste');
+    const per = el('input');
+    per.type = 'text'; per.placeholder = '2025-1'; per.value = st.periodo || '';
+    per.addEventListener('input', () => { setAv(key, 'periodo', per.value); renderMeta(); });
+    lPer.append(per);
+    box.append(lEstado, lPer);
+
+    if (esSlot(cu)) {
+      const lNom = el('label', '', 'Materia elegida');
+      const nom = el('input');
+      nom.type = 'text'; nom.placeholder = cu.nombre; nom.value = st.nombre || '';
+      nom.addEventListener('input', () => { setAv(key, 'nombre', nom.value); renderMeta(); });
+      lNom.append(nom);
+      box.append(lNom);
+    }
+  }
+
+  function renderLibros(lista) {
+    const c = $('d-libros');
+    c.replaceChildren();
+    if (!lista || !lista.length) {
+      c.append(el('p', 'mc-vacio', 'Aún no se han cargado referencias bibliográficas para este curso.'));
+      return;
+    }
+    lista.forEach((l) => {
+      const item = el('div', 'mc-libro');
+      const box = el('div');
+      box.append(el('div', 'mc-libro-t', l.titulo));
+      const sub = [l.autor, l.nota].filter(Boolean).join('. ');
+      if (sub) box.append(el('div', 'mc-libro-a', sub));
+      item.append(el('span', '', '📖'), box);
+      c.append(item);
+    });
+  }
+
+  function renderProyectos(lista) {
+    const c = $('d-proyectos');
+    c.replaceChildren();
+    if (!lista || !lista.length) {
+      c.append(el('p', 'mc-vacio', 'Sin proyectos asignados.'));
+      return;
+    }
+    const ul = el('ul', 'mc-lista');
+    lista.forEach((p) => {
+      const li = el('li');
+      if (p.url) {
+        const a = el('a', '', p.titulo);
+        a.href = p.url;
+        li.append(a);
+      } else {
+        li.append(el('strong', '', p.titulo));
+      }
+      if (p.nota) li.append(document.createTextNode(' (' + p.nota + ')'));
+      if (p.pendiente) li.append(el('span', 'mc-pend', 'enlace pendiente'));
+      ul.append(li);
+    });
+    c.append(ul);
+  }
+
+  function renderEnlaces(lista) {
+    const c = $('d-enlaces');
+    c.replaceChildren();
+    if (!lista || !lista.length) return;
+    c.append(el('h4', '', 'Material relacionado'));
+    const ul = el('ul', 'mc-lista');
+    lista.forEach((e) => {
+      const li = el('li');
+      const a = el('a', '', e.titulo);
+      a.href = e.url;
+      li.append(a);
+      ul.append(li);
+    });
+    c.append(ul);
+  }
+
+  function cambiarTab(id) {
+    document.querySelectorAll('.mc-tabpanel').forEach((p) => { p.hidden = p.id !== id; });
+    document.querySelectorAll('.mc-tab').forEach((b) => {
+      const on = b.dataset.tab === id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', String(on));
+    });
+  }
+
+  function abrirMateria(planId, si, i) {
+    const s = PLANES[planId].semestres[si];
+    const cu = s.cursos[i];
+    if (!cursoActual) scrollGuardado = window.scrollY;
+    cursoActual = { planId, si, i, cu, key: claveDe(planId, s.n, i, cu) };
+    const data = CONTENIDO[cu.codigo] || {};
+
+    renderMeta();
+    renderEdicionDetalle();
+    $('d-desc').textContent = data.desc ||
+      (esSlot(cu)
+        ? 'Espacio del plan de estudios reservado para una asignatura de tipología ' + TIPOS[cu.tipo].toLowerCase() + '.'
+        : 'El programa de esta asignatura está en proceso de actualización. Consulta la normativa vigente de tu plan de estudios.');
+    renderEnlaces(data.enlaces);
+    renderLibros(data.libros);
+    const ap = $('d-apuntes');
+    if (data.apuntes) ap.innerHTML = data.apuntes; // contenido propio de este archivo
+    else ap.replaceChildren(el('p', 'mc-vacio', 'No hay notas de clase ni libretas computacionales disponibles por ahora.'));
+    renderProyectos(data.proyectos);
+
+    $('view-malla').hidden = true;
+    $('view-detalle').hidden = false;
+    cambiarTab('tab-resumen');
+    window.scrollTo(0, 0);
+    $('d-titulo').focus({ preventScroll: true });
+    try { history.replaceState(null, '', '#' + encodeURIComponent(cursoActual.key)); } catch (e) { /* entorno sin historial */ }
+  }
+
+  function volverMalla() {
+    if (!cursoActual) return;
+    const key = cursoActual.key;
+    cursoActual = null;
+    $('view-detalle').hidden = true;
+    $('view-malla').hidden = false;
+    renderPlan();
+    window.scrollTo(0, scrollGuardado);
+    const tarjeta = document.querySelector('.mc-asig[data-key="' + key + '"]');
+    if (tarjeta) tarjeta.focus({ preventScroll: true });
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* entorno sin historial */ }
+  }
+
+  function abrirPorHash() {
+    let k = '';
+    try { k = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    if (!k) return;
+    const ids = Object.keys(PLANES).sort((a, b) => (a === planActual ? -1 : b === planActual ? 1 : 0));
+    for (const pid of ids) {
+      const hit = cursosDe(pid).find((x) => x.key === k);
+      if (hit) {
+        marcarPlan(pid);
+        abrirMateria(pid, hit.si, hit.i);
+        return;
+      }
+    }
+  }
+
+  /* ================= Modo edición ================= */
+  function mostrarExport() {
+    const ta = $('export-ta');
+    ta.value = generarSnippet();
+    $('export').hidden = false;
+    $('export-msg').textContent = 'Copia este bloque y pégalo en malla.html, reemplazando el bloque const AVANCE.';
+    ta.focus();
+    ta.select();
+    try {
+      navigator.clipboard.writeText(ta.value).then(
+        () => { $('export-msg').textContent = 'Copiado. Pégalo en malla.html, reemplazando el bloque const AVANCE.'; },
+        () => { /* el usuario puede copiar el texto seleccionado */ }
+      );
+    } catch (e) { /* sin portapapeles */ }
+  }
+  function descartarCambios() {
+    avance = JSON.parse(BASE_SIG);
+    try { localStorage.removeItem(KEY_BORRADOR); } catch (e) { /* sin almacenamiento */ }
+    $('export').hidden = true;
+    if (cursoActual) volverMalla(); else renderPlan();
+  }
+
+  /* ================= Eventos ================= */
+  document.querySelectorAll('.mc-plan').forEach((b) => b.addEventListener('click', () => {
+    marcarPlan(b.dataset.plan);
+    renderPlan();
+  }));
+  document.querySelectorAll('.mc-tab').forEach((b) => b.addEventListener('click', () => cambiarTab(b.dataset.tab)));
+  $('btn-volver').addEventListener('click', volverMalla);
+  $('btn-exportar').addEventListener('click', mostrarExport);
+  $('btn-descartar').addEventListener('click', descartarCambios);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && cursoActual && !/^(INPUT|SELECT|TEXTAREA)$/.test((e.target || {}).tagName || '')) volverMalla();
+  });
+  window.addEventListener('hashchange', () => {
+    if (location.hash.length > 1) abrirPorHash(); else if (cursoActual) volverMalla();
+  });
+
+  renderPlan();
+  abrirPorHash();
+})();
+</script>
+</body>
+</html>
