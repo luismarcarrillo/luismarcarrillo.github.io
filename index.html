@@ -47,51 +47,38 @@
         </div>
       </div>
 
-      <div class="animation-slot" aria-label="Espacio reservado para una animación"></div>
+      <figure class="dynamic-system">
+        <canvas id="sistemas-canvas" role="img"
+          aria-label="Campo de fases animado de un sistema dinámico con trayectorias que convergen hacia un punto de equilibrio"></canvas>
+        <figcaption>
+          <span class="dynamic-system-title">Sistema dinámico</span>
+          <span class="dynamic-system-equation">x′ = y · y′ = −0.8x − 0.18y</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="block">
     <span class="eyebrow">01 — Sobre mí</span>
-    <h2>Formación en curso</h2>
-    <p class="intro">Curso matemáticas en la Universidad Nacional de Colombia, con electivas orientadas a física teórica. Participo en seminarios de física teórica y grupos de estudio sobre relatividad general, buscando abrirme camino hacia sistemas dinámicos, geometría diferencial aplicada y métodos variacionales.</p>
+    <h2>Biografía y enfoque</h2>
+    <p class="intro">Un espacio para contar de dónde vengo, qué preguntas guían mi formación y hacia dónde quiero llevar las matemáticas.</p>
 
     <div class="def-grid">
       <div class="def">
-        <h3>Énfasis</h3>
-        <ul>
-          <li>Matemáticas puras y aplicadas</li>
-          <li>Electivas en física teórica</li>
-        </ul>
+        <h3>Biografía</h3>
+        <p>Estudio matemáticas en la Universidad Nacional de Colombia. Mi formación parte de la matemática pura y se orienta progresivamente hacia las preguntas de la física teórica.</p>
       </div>
       <div class="def">
-        <h3>Cursos destacados</h3>
-        <ul>
-          <li>Geometría diferencial</li>
-          <li>Álgebra lineal avanzada</li>
-          <li>Mecánica analítica</li>
-          <li>Ecuaciones diferenciales parciales</li>
-        </ul>
+        <h3>Enfoque</h3>
+        <p>Quiero formarme como físico matemático: entender cómo la geometría, el análisis, el álgebra y los sistemas dinámicos permiten formular y estudiar problemas físicos con rigor.</p>
       </div>
       <div class="def">
-        <h3>Herramientas</h3>
-        <ul>
-          <li>Python</li>
-          <li>Wolfram Mathematica</li>
-          <li>LaTeX</li>
-        </ul>
+        <h3>Preguntas de trabajo</h3>
+        <p>Me interesa explorar simetrías, geometría diferencial, mecánica analítica y sistemas dinámicos, conectando estructuras abstractas con modelos que puedan interpretarse físicamente.</p>
       </div>
     </div>
 
-    <div class="tags">
-      <span class="tag">Simetrías en sistemas físicos</span>
-      <span class="tag">Teoría de representaciones</span>
-      <span class="tag">Cuantización geométrica</span>
-      <span class="tag">Geometría diferencial</span>
-      <span class="tag">Sistemas dinámicos</span>
-    </div>
-
-    <p style="margin-top:1.6rem; color:var(--ink-soft);">¿Colaboración, discusión académica o tutoría? Escríbeme a <a href="mailto:luismath.pi3@gmail.com">luismath.pi3@gmail.com</a>.</p>
+    <p style="margin-top:1.6rem; color:var(--ink-soft);">Esta sección puede ampliarse con una cronología personal, intereses de investigación, lecturas actuales y objetivos de formación.</p>
   </section>
 
 </main>
@@ -105,5 +92,6 @@
 </footer>
 
 <script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+<script src="sistemas.js"></script>
 </body>
 </html>

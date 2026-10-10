@@ -103,7 +103,7 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
 /* ---------- Hero ---------- */
 .hero{ padding: 4rem 0 2.5rem; }
 .hero-grid{
-  display:grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items:center;
+  display:grid; grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.25fr); gap: 2.5rem; align-items:center;
 }
 .eyebrow{
   display:inline-block; font-family: var(--mono); font-size: 0.72rem;
@@ -121,9 +121,24 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
 }
 .hero p.lede{ margin-top: 1.1rem; max-width: 46ch; color: var(--ink-soft); }
 .hero-actions{ display:flex; gap: 0.8rem; margin-top: 1.6rem; flex-wrap: wrap; }
-.animation-slot{
-  min-height: 260px; border: 1px dashed var(--line-strong);
-  border-radius: var(--radius); background: rgba(255,255,255,0.35);
+.dynamic-system{
+  margin:0; min-height:420px; background:var(--white);
+  border:1px solid var(--line); border-top:3px solid var(--indigo);
+  border-radius:var(--radius); padding:1rem 1.1rem 0.9rem;
+  display:flex; flex-direction:column; gap:0.7rem;
+}
+.dynamic-system canvas{
+  display:block; width:100%; flex:1; min-height:350px;
+}
+.dynamic-system figcaption{
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; flex-wrap:wrap; font-family:var(--mono); font-size:0.68rem;
+  letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-faint);
+}
+.dynamic-system-title{ color:var(--indigo); }
+.dynamic-system-equation{ color:var(--ink-soft); text-transform:none; letter-spacing:0; }
+@media (prefers-reduced-motion: reduce){
+  .dynamic-system canvas{ min-height:260px; }
 }
 
 .btn{
@@ -228,6 +243,8 @@ footer svg{ width:16px; height:16px; vertical-align:middle; }
   .nav-links{ gap: 1rem; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero h1{ font-size: 2.1rem; }
+  .dynamic-system{ min-height:340px; }
+  .dynamic-system canvas{ min-height:270px; }
 }
 
 html { height: 100%; }
