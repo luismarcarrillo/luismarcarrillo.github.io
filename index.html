@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="oso.css">
 </head>
 <body>
 
@@ -48,12 +47,7 @@
         </div>
       </div>
 
-      <figure class="oso" id="oso">
-        <canvas id="oso-canvas" width="360" height="260" role="img"
-          aria-label="Oso andino dibujado con puntos y líneas que se deshace en estructuras geométricas y vuelve a formarse"></canvas>
-        <figcaption id="oso-pie" aria-live="polite"></figcaption>
-        <button type="button" class="oso-btn" id="oso-sig">Siguiente figura</button>
-      </figure>
+      <div class="animation-slot" aria-label="Espacio reservado para una animación"></div>
     </div>
   </section>
 
@@ -110,7 +104,6 @@
   </div>
 </footer>
 
-<script src="oso.js"></script>
 <script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
 </body>
 </html>

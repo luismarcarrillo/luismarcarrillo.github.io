@@ -121,6 +121,10 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
 }
 .hero p.lede{ margin-top: 1.1rem; max-width: 46ch; color: var(--ink-soft); }
 .hero-actions{ display:flex; gap: 0.8rem; margin-top: 1.6rem; flex-wrap: wrap; }
+.animation-slot{
+  min-height: 260px; border: 1px dashed var(--line-strong);
+  border-radius: var(--radius); background: rgba(255,255,255,0.35);
+}
 
 .btn{
   display:inline-flex; align-items:center; gap:0.5rem;
