@@ -275,3 +275,22 @@ footer svg{ width:16px; height:16px; vertical-align:middle; }
   .hero h1{ font-size: 2.1rem; }
   .signature{ margin-top: 1.5rem; }
 }
+ html { height: 100%; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;      /* en móviles ajusta a la barra del navegador */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;          /* ocupa todo el espacio libre */
+  width: 100%;             /* necesario porque el flex centraría y encogería el contenido */
+}
+
+footer {
+  margin-top: auto;
+  flex-shrink: 0;
+}
