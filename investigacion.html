@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Investigación — Luismar Alvarez Carrillo</title>
+<meta name="description" content="Proyecto de lectura dirigida sobre splines y exploración de intereses en matemática aplicada e inteligencia artificial.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,11 +33,12 @@
 <div class="grid-2">
   <a href="https://luismarcarrillo.github.io/Pares-Ordenados-proyecto-Corte-2026-/" 
      target="_blank" 
-     class="card" 
-     style="text-decoration: none; color: inherit; display: block;">
+     rel="noopener"
+     class="card">
     <span class="label">Tema actual</span>
     <h3>Splines en estadística</h3>
     <p>Proyecto de lectura dirigida sobre splines, dentro del área de estadística, acompañado por un mentor del programa.</p>
+    <span class="go">Ver proyecto →</span>
   </a>
   <div class="card green">
     <span class="label">Semillero de investigación</span>
@@ -50,11 +52,13 @@
   </section>
 </main>
 <footer>
-  <p>© 2025 Luismar Alvarez Carrillo</p>
+  <p>© <span id="anio"></span> Luismar Alvarez Carrillo</p>
   <div class="foot-links">
     <a href="mailto:luismath.pi3@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg></a>
     <a href="https://github.com/luismarcarrillo" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-11A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
   </div>
 </footer>
+
+<script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
 </body>
 </html>

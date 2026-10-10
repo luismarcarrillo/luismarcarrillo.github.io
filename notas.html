@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notas — Luismar Alvarez Carrillo</title>
+<meta name="description" content="Notas expositivas y bibliografía de formación en matemáticas, geometría, física matemática y ecuaciones diferenciales.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -44,7 +45,7 @@
     <div class="note-card pending">
       <div class="note-top">
         <h3>Ejemplo: El teorema de Noether desde la geometría simpléctica</h3>
-        <span class="note-date">Pendiente</span>
+        <span class="note-date">En preparación</span>
       </div>
       <p>Desarrollo del teorema de Noether como consecuencia de la invariancia bajo flujos hamiltonianos, siguiendo el enfoque de Arnold.</p>
       <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
@@ -53,7 +54,7 @@
     <div class="note-card pending">
       <div class="note-top">
         <h3>Ejemplo: Álgebras de Lie y sus representaciones — una introducción</h3>
-        <span class="note-date">Pendiente</span>
+        <span class="note-date">En preparación</span>
       </div>
       <p>Notas de un curso o lectura dirigida, con las demostraciones reescritas y ejemplos propios.</p>
       <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
@@ -133,12 +134,13 @@
 </main>
 
 <footer>
-  <p>© 2025 Luismar Alvarez Carrillo</p>
+  <p>© <span id="anio"></span> Luismar Alvarez Carrillo</p>
   <div class="foot-links">
     <a href="mailto:luismath.pi3@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg></a>
     <a href="https://github.com/luismarcarrillo" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-11A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
   </div>
 </footer>
 
+<script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
 </body>
 </html>

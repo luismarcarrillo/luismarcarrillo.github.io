@@ -135,22 +135,6 @@ a:focus-visible, button:focus-visible{ outline: 2px solid var(--accent); outline
 .btn.primary:hover{ background: var(--accent); border-color: var(--accent); }
 .btn svg{ width:14px; height:14px; }
 
-/* signature SVG */
-.signature{ display:flex; justify-content:center; }
-.signature svg{ width: 100%; max-width: 300px; height:auto; }
-.curve-blue, .curve-green{
-  fill:none; stroke-width: 1.6; stroke-linecap: round;
-  stroke-dasharray: 900; stroke-dashoffset: 900;
-  animation: draw 2.4s ease forwards 0.2s;
-}
-.curve-blue{ stroke: var(--blue); }
-.curve-green{ stroke: var(--teal-soft); animation-delay: 0.5s; }
-.sig-dot{ fill: var(--accent); opacity:0; animation: fadein 0.6s ease forwards 2.4s; }
-@keyframes draw{ to{ stroke-dashoffset: 0; } }
-@keyframes fadein{ to{ opacity:1; } }
-@media (prefers-reduced-motion: reduce){
-  .curve-blue, .curve-green, .sig-dot{ animation: none; stroke-dashoffset:0; opacity:1; }
-}
 
 /* ---------- Sections ---------- */
 section.block{ padding: 2.4rem 0; border-top: 1px solid var(--line); }
@@ -261,6 +245,7 @@ footer{
   text-align:center; padding: 3.4rem 0 3rem;
   border-top: 1px solid var(--line); color: var(--ink-faint);
   font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.03em;
+  margin-top: auto; flex-shrink: 0;
 }
 footer .foot-links{ display:flex; justify-content:center; gap:1rem; margin-top:0.7rem; }
 footer a{ color: var(--ink-soft); }
@@ -273,9 +258,9 @@ footer svg{ width:16px; height:16px; vertical-align:middle; }
   .nav-links{ gap: 1rem; }
   .hero-grid{ grid-template-columns: 1fr; }
   .hero h1{ font-size: 2.1rem; }
-  .signature{ margin-top: 1.5rem; }
 }
- html { height: 100%; }
+
+html { height: 100%; }
 
 body {
   min-height: 100vh;
@@ -290,7 +275,7 @@ main {
   width: 100%;             /* necesario porque el flex centraría y encogería el contenido */
 }
 
-footer {
-  margin-top: auto;
-  flex-shrink: 0;
-}
+a.card{ text-decoration: none; color: inherit; display: block; transition: border-color .15s, transform .15s; }
+a.card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+a.card:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+a.card .go{ display: inline-block; margin-top: .6rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }

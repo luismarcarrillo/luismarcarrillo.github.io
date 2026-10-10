@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luismar Alvarez Carrillo — Matemáticas, UNAL</title>
-<meta name="description" content="Estudiante de matemáticas  en la Universidad Nacional de Colombia,  .">
+<meta name="description" content="Estudiante de matemáticas en la Universidad Nacional de Colombia, interesado en usar herramientas de la matemática pura para formalizar problemas del mundo real.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="oso.css">
 </head>
 <body>
 
@@ -33,8 +34,8 @@
       <div>
         <span class="eyebrow">Matemáticas · Universidad Nacional de Colombia</span>
         <h1>Luismar Alvarez Carrillo</h1>
-        <p class="role">Estudiante de matemática en la Universidad Nacional de Colombia, con un interés en la interseccionalidad de la rigurosidad de la teoría y la posibilidad de aplicarla a problemas del mundo real.</p>
-        <p class="lede">No busco solo aplicar matemáticas ya construidas, sino usar las herramientas de la matemática pura como lógical, teoría de grupos, álgebra lineal, análisis, para matematizar problemas que todavía no tienen una formulación rigurosa. Mi formación de pregrado está en lo puro; mi curiosidad, en lo aplicado.</p>
+        <p class="role">Estudiante de matemáticas en la Universidad Nacional de Colombia, con interés en la intersección entre la rigurosidad de la teoría y su aplicación a problemas del mundo real.</p>
+        <p class="lede">No busco solo aplicar matemáticas ya construidas, sino usar las herramientas de la matemática pura como lógica, teoría de grupos, álgebra lineal y análisis para matematizar problemas que todavía no tienen una formulación rigurosa. Mi formación de pregrado está en lo puro; mi curiosidad, en lo aplicado.</p>
         <div class="hero-actions">
           <a class="btn primary" href="mailto:luismath.pi3@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>
@@ -46,15 +47,13 @@
           </a>
         </div>
       </div>
-      <div class="signature" aria-hidden="true">
-        <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="150" cy="95" rx="110" ry="55" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-          <ellipse cx="150" cy="95" rx="42" ry="20" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-          <ellipse class="curve-blue" cx="150" cy="95" rx="76" ry="38" fill="none"/>
-          <circle class="curve-green" cx="255" cy="95" r="22" fill="none"/>
-          <circle class="sig-dot" cx="233" cy="95" r="4"/>
-        </svg>
-      </div>
+
+      <figure class="oso" id="oso">
+        <canvas id="oso-canvas" width="360" height="260" role="img"
+          aria-label="Oso andino dibujado con puntos y líneas que se deshace en estructuras geométricas y vuelve a formarse"></canvas>
+        <figcaption id="oso-pie" aria-live="polite"></figcaption>
+        <button type="button" class="oso-btn" id="oso-sig">Siguiente figura</button>
+      </figure>
     </div>
   </section>
 
@@ -104,12 +103,14 @@
 </main>
 
 <footer>
-  <p>© 2025 Luismar Alvarez Carrillo</p>
+  <p>© <span id="anio"></span> Luismar Alvarez Carrillo</p>
   <div class="foot-links">
     <a href="mailto:luismath.pi3@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg></a>
     <a href="https://github.com/luismarcarrillo" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-11A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
   </div>
 </footer>
 
+<script src="oso.js"></script>
+<script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
 </body>
 </html>
