@@ -12,7 +12,7 @@
   var scale = 1;
   var lastTime = 0;
   var particles = [];
-  var colors = ['#5f4fae', '#8955ab', '#1c8f9e', '#4fb8c4'];
+  var colors = ['#2b0057', '#4b005c', '#79004d', '#a41f36', '#d3521b', '#f59b15', '#fce854'];
 
   function resize() {
     var box = canvas.getBoundingClientRect();
@@ -24,11 +24,12 @@
     context.setTransform(scale, 0, 0, scale, 0, 0);
   }
 
-  function lorenz(point, step) {
+  function thomas(point, step) {
+    var b = 0.208186;
     return {
-      x: 10 * (point.y - point.x) * step,
-      y: (point.x * (28 - point.z) - point.y) * step,
-      z: (point.x * point.y - (8 / 3) * point.z) * step
+      x: (Math.sin(point.y) - b * point.x) * step,
+      y: (Math.sin(point.z) - b * point.y) * step,
+      z: (Math.sin(point.x) - b * point.z) * step
     };
   }
 
@@ -36,7 +37,7 @@
     var angle = -0.52;
     var rotatedX = point.x * Math.cos(angle) - point.z * Math.sin(angle);
     var rotatedZ = point.x * Math.sin(angle) + point.z * Math.cos(angle);
-    var scaleFactor = Math.min(width / 52, height / 58);
+    var scaleFactor = Math.min(width / 10, height / 10);
     return {
       x: width / 2 + rotatedX * scaleFactor,
       y: height / 2 - (point.y * 0.72 + rotatedZ * 0.42) * scaleFactor,
@@ -48,7 +49,7 @@
     particles = [];
     for (var i = 0; i < 7; i += 1) {
       particles.push({
-        point: { x: 0.1 + i * 0.02, y: 1 + i * 0.08, z: 1 + i * 0.04 },
+        point: { x: 0.1 + i * 0.05, y: 0.1 + i * 0.05, z: 0.1 },
         trail: [],
         color: colors[i % colors.length]
       });
@@ -56,7 +57,7 @@
   }
 
   function stepParticle(particle, delta) {
-    var change = lorenz(particle.point, 0.005 * delta);
+    var change = thomas(particle.point, 0.1 * delta);
     particle.point.x += change.x;
     particle.point.y += change.y;
     particle.point.z += change.z;
@@ -65,9 +66,9 @@
       y: particle.point.y,
       z: particle.point.z
     });
-    if (particle.trail.length > 150) particle.trail.shift();
-    if (Math.abs(particle.point.x) > 30 || Math.abs(particle.point.y) > 40) {
-      particle.point = { x: 0.1, y: 1, z: 1 };
+    if (particle.trail.length > 200) particle.trail.shift();
+    if (Math.abs(particle.point.x) > 10 || Math.abs(particle.point.y) > 10) {
+      particle.point = { x: 0.1, y: 0.1, z: 0.1 };
       particle.trail = [];
     }
   }
