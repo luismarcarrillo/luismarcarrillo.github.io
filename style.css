@@ -258,7 +258,7 @@ section.block:first-of-type{ border-top: none; }
 
 /* ---------- Footer ---------- */
 footer{
-  text-align:center; padding: 2.4rem 0 3rem; margin-top: 1rem;
+  text-align:center; padding: 3.4rem 0 3rem;
   border-top: 1px solid var(--line); color: var(--ink-faint);
   font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.03em;
 }
