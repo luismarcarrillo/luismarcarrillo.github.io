@@ -182,6 +182,8 @@ section.block:first-of-type{ border-top: none; }
 .card.green{ border-top-color: var(--teal); }
 .card.indigo{ border-top-color: var(--indigo); }
 .card.violet{ border-top-color: var(--violet); }
+.course-card{ display:flex; flex-direction:column; }
+.course-card .note-date{ margin-top:auto; padding-top:0.8rem; }
 .card .label{
   font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--ink-faint); margin-bottom: 0.5rem; display:block;
@@ -191,42 +193,6 @@ section.block:first-of-type{ border-top: none; }
 .card li{ color: var(--ink-soft); padding: 0.15rem 0; }
 .card li::before{ content:"— "; color: var(--ink-faint); }
 .card p{ color: var(--ink-soft); }
-
-/* ---------- Expository notes ---------- */
-.note-card{
-  background: var(--white); border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius); padding: 1.2rem 1.4rem;
-  margin-bottom: 1rem; display:flex; flex-direction:column; gap:0.3rem;
-}
-.note-card .note-top{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap; }
-.note-card h3{ font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
-.note-card .note-date{ font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; }
-.note-card p{ color: var(--ink-soft); font-size: 0.94rem; }
-.note-card .note-link{ font-family: var(--mono); font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; margin-top:0.3rem; }
-.note-card.pending{
-  border-left-style: dashed; border-color: var(--line-strong); border-left-color: var(--line-strong);
-  background: transparent;
-}
-.note-card.pending h3{ color: var(--ink-faint); font-style: italic; }
-.note-card.pending p{ color: var(--ink-faint); }
-
-/* ---------- Bibliography ---------- */
-.biblio-group{ margin-top: 1.8rem; }
-.biblio-group h3{
-  font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase;
-  letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.8rem;
-  padding-bottom: 0.4rem; border-bottom: 1px solid var(--line);
-}
-.biblio-list{ list-style:none; }
-.biblio-list li{
-  display:flex; gap: 0.9rem; padding: 0.7rem 0; border-bottom: 1px dashed var(--line);
-}
-.biblio-list li:last-child{ border-bottom:none; }
-.biblio-num{ font-family: var(--mono); color: var(--ink-faint); font-size:0.85rem; flex-shrink:0; width: 1.6rem; }
-.biblio-text .title{ font-family: var(--serif); font-style: italic; color: var(--ink); }
-.biblio-text .author{ color: var(--ink-soft); font-size: 0.92rem; }
-.biblio-text .note{ color: var(--ink-faint); font-size: 0.86rem; margin-top: 0.2rem; }
 
 /* ---------- Timeline (eventos) ---------- */
 .timeline{ margin-top: 1.8rem; border-left: 1px solid var(--line-strong); padding-left: 1.4rem; }

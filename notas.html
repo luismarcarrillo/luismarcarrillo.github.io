@@ -29,105 +29,67 @@
 <main class="container">
 
   <section class="block" style="padding-top:2.8rem;">
-    <span class="eyebrow">02 — Producción propia</span>
-    <h2>Notas expositivas</h2>
-    <p class="intro">Escritos cortos donde desarrollo, con mis propias palabras, un resultado o una construcción que he estudiado en profundidad. El objetivo no es resumir un libro, sino mostrar cómo pienso un problema matemático de principio a fin.</p>
+    <span class="eyebrow">02 — Cursos y notas</span>
+    <h2>Material de cada curso</h2>
+    <p class="intro">Una colección de notas, resúmenes y desarrollos propios organizados por curso. Cada tarjeta puede crecer con apuntes, demostraciones, ejercicios resueltos y material descargable.</p>
 
-    <!--
-      PLANTILLA — reemplaza cada .note-card por una nota real cuando la tengas.
-      Estructura sugerida por nota (3–4 páginas en PDF/LaTeX es suficiente):
-        1. Enunciado del resultado que vas a desarrollar.
-        2. Por qué importa / en qué contexto aparece.
-        3. Demostración o construcción en tus palabras (no copiada del libro).
-        4. Un ejemplo o caso particular que ilustre el resultado.
-      Sube el PDF a tu repositorio (ej. /notas/nombre.pdf) y enlázalo en note-link.
-    -->
-    <div class="note-card pending">
-      <div class="note-top">
-        <h3>Ejemplo: El teorema de Noether desde la geometría simpléctica</h3>
-        <span class="note-date">En preparación</span>
-      </div>
-      <p>Desarrollo del teorema de Noether como consecuencia de la invariancia bajo flujos hamiltonianos, siguiendo el enfoque de Arnold.</p>
-      <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
-    </div>
-
-    <div class="note-card pending">
-      <div class="note-top">
-        <h3>Ejemplo: Álgebras de Lie y sus representaciones — una introducción</h3>
-        <span class="note-date">En preparación</span>
-      </div>
-      <p>Notas de un curso o lectura dirigida, con las demostraciones reescritas y ejemplos propios.</p>
-      <span class="note-link">↳ Reemplaza esta tarjeta por tu PDF cuando esté lista</span>
+    <div class="grid-2 course-grid">
+      <article class="card course-card">
+        <span class="label">Fundamentación</span>
+        <h3>Álgebra Lineal</h3>
+        <p>Espacios vectoriales, transformaciones lineales, matrices, eigenvalores y aplicaciones geométricas.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
+      <article class="card course-card green">
+        <span class="label">Computación matemática</span>
+        <h3>Métodos Numéricos</h3>
+        <p>Métodos para aproximar soluciones, analizar errores y llevar problemas matemáticos a experimentos computacionales.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
+      <article class="card course-card indigo">
+        <span class="label">Mecánica clásica</span>
+        <h3>Mecánica y geometría</h3>
+        <p>Formulación matemática de la mecánica, con énfasis en coordenadas, energía, simetrías y estructuras geométricas.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
+      <article class="card course-card violet">
+        <span class="label">Geometría</span>
+        <h3>Geometría diferencial y topología</h3>
+        <p>Variedades, formas, grupos de Lie y las ideas geométricas que conectan la matemática con la física.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
+      <article class="card course-card">
+        <span class="label">Análisis</span>
+        <h3>Ecuaciones diferenciales</h3>
+        <p>Herramientas analíticas para estudiar ecuaciones diferenciales y modelos continuos.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
+      <article class="card course-card green">
+        <span class="label">Física matemática</span>
+        <h3>Mecánica cuántica</h3>
+        <p>Conceptos matemáticos de la mecánica cuántica y su relación con espacios, operadores y simetrías.</p>
+        <span class="note-date">Notas en preparación</span>
+      </article>
     </div>
   </section>
 
   <section class="block">
-    <span class="eyebrow">02.1 — Lecturas de referencia</span>
-    <h2>Bibliografía de formación</h2>
-    <p class="intro">Textos que han guiado mi formación en física matemática, organizados por el problema que abordan más que por orden alfabético.</p>
+    <span class="eyebrow">02.1 — Proyectos y aplicaciones</span>
+    <h2>Matemáticas en práctica</h2>
+    <p class="intro">Páginas y proyectos donde las herramientas de cada curso se convierten en cálculos, visualizaciones o problemas concretos.</p>
 
-    <div class="biblio-group">
-      <h3>Mecánica clásica y geometría</h3>
-      <ul class="biblio-list">
-        <li>
-          <span class="biblio-num">01</span>
-          <div class="biblio-text">
-            <div class="title">Mathematical Methods of Classical Mechanics</div>
-            <div class="author">V.I. Arnold</div>
-            <div class="note">Formulación geométrica de la mecánica: variedades, formas simplécticas y el puente hacia la física moderna.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="biblio-group">
-      <h3>Geometría y topología</h3>
-      <ul class="biblio-list">
-        <li>
-          <span class="biblio-num">02</span>
-          <div class="biblio-text">
-            <div class="title">Geometry, Topology and Physics</div>
-            <div class="author">M. Nakahara</div>
-            <div class="note">Panorama de la geometría diferencial y la topología con la física teórica como hilo conductor.</div>
-          </div>
-        </li>
-        <li>
-          <span class="biblio-num">03</span>
-          <div class="biblio-text">
-            <div class="title">Differential Geometry and Lie Groups for Physicists</div>
-            <div class="author">M. Fecko</div>
-            <div class="note">Tratamiento riguroso de grupos y álgebras de Lie orientado a sus aplicaciones físicas.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="biblio-group">
-      <h3>Teoría cuántica</h3>
-      <ul class="biblio-list">
-        <li>
-          <span class="biblio-num">04</span>
-          <div class="biblio-text">
-            <div class="title">Quantum Mechanics and Quantum Field Theory</div>
-            <div class="author">J. Dimock</div>
-            <div class="note">Aproximación matemáticamente rigurosa a la mecánica cuántica y la teoría cuántica de campos.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="biblio-group">
-      <h3>Ecuaciones diferenciales</h3>
-      <ul class="biblio-list">
-        <li>
-          <span class="biblio-num">05</span>
-          <div class="biblio-text">
-            <div class="title">Partial Differential Equations</div>
-            <div class="author">L.C. Evans</div>
-            <div class="note">Referencia estándar en el análisis moderno de ecuaciones en derivadas parciales.</div>
-          </div>
-        </li>
-      </ul>
+    <div class="grid-2">
+      <a class="card" href="malla.html">
+        <span class="label">Álgebra Lineal</span>
+        <h3>Aplicaciones y material interactivo</h3>
+        <p>Consulta el espacio de la malla curricular para revisar el contenido del curso, sus evaluaciones y el material asociado.</p>
+        <span class="go">Ver material del curso →</span>
+      </a>
+      <article class="card pending">
+        <span class="label">Próximamente</span>
+        <h3>Más proyectos aplicados</h3>
+        <p>Esta sección reunirá simulaciones, visualizaciones y páginas dedicadas a problemas de geometría, análisis y física matemática.</p>
+      </article>
     </div>
   </section>
 
